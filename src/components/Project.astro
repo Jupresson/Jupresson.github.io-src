@@ -48,7 +48,7 @@ const isBeanWithGuns = image.includes("ProjectBeanWithTheGunsImage");
     <p class="project-description">{description}</p>
     
     <div class="project-tech">
-      {technologies.map((tech) => (
+      {technologies.map((tech: string) => (
         <span class="tech-badge">{tech}</span>
       ))}
     </div>

@@ -1,0 +1,89 @@
+---
+
+import "../css/base.css"
+import "../css/header.css"
+import "../css/footer.css"
+import Header from "../components/Header.astro"
+import Footer from "../components/footer.astro"
+import { getUiContent } from "../content/siteContent"
+import { getLocaleFromPathname } from "../i18n/site"
+
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props
+const locale = getLocaleFromPathname(Astro.url.pathname)
+const ui = getUiContent(locale)
+const pageTitle = title ? `${title} | ${ui.siteTitle}` : ui.siteTitle
+
+---
+
+<!doctype html>
+
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/webp" href="/FacePicture.webp" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+		<script is:inline>
+			(() => {
+				try {
+					if (localStorage.getItem("portfolio-theme") === "light") {
+						document.documentElement.classList.add("theme-light");
+					}
+				} catch {
+					
+				}
+			})();
+		</script>
+		<script is:inline>
+			(() => {
+				const setLevelUpJitter = (host) => {
+					const text = host?.querySelector?.(".level-up-text");
+					if (!text) return;
+
+					// Keep randomization subtle so each hover feels unique without looking noisy.
+					const x = (Math.random() * 8 - 4).toFixed(2);
+					const y = (Math.random() * 4 - 2).toFixed(2);
+					const r = (Math.random() * 6 - 3).toFixed(2);
+
+					text.style.setProperty("--level-up-x", `${x}px`);
+					text.style.setProperty("--level-up-y", `${y}px`);
+					text.style.setProperty("--level-up-r", `${r}deg`);
+				};
+
+				document.addEventListener(
+					"pointerenter",
+					(event) => {
+						const target = event.target;
+						if (!(target instanceof Element)) return;
+
+						const host = target.closest(
+							".project-card.bean-with-guns .project-image, .bean-levelup-wrap",
+						);
+
+						if (host) {
+							setLevelUpJitter(host);
+						}
+					},
+					true,
+				);
+			})();
+		</script>
+	</head>
+	<body>
+		<Header
+			locale={locale}
+			currentPath={Astro.url.pathname}
+			homeLabel={ui.nav.home}
+			projectsLabel={ui.nav.projects}
+			languageLabel={ui.nav.languageLabel}
+		/>
+		<slot />
+		<Footer availabilityText={ui.footer.availability} />
+	</body>
+</html>
+

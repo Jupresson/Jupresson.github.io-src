@@ -1,0 +1,151 @@
+name: Build And Sync Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-sync:
+    name: Build and sync to target repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Load deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.PAGES_DEPLOY_KEY }}
+
+      - name: Trust GitHub SSH host
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Sync dist folder to target repository
+        env:
+          TARGET_REPO: Jupresson/jupresson.github.io
+        run: |
+          set -euo pipefail
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          rm -rf target-repo
+          git clone "git@github.com:${TARGET_REPO}.git" target-repo
+
+          CNAME_FILE=""
+          if [ -f target-repo/CNAME ]; then
+            CNAME_FILE=$(cat target-repo/CNAME)
+          fi
+
+          find target-repo -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+          cp -R dist/. target-repo/
+          touch target-repo/.nojekyll
+
+          if [ -n "$CNAME_FILE" ]; then
+            printf "%s\n" "$CNAME_FILE" > target-repo/CNAME
+          fi
+
+          cd target-repo
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "deploy: sync built site from source repo"
+            git push origin main
+          else
+            echo "No changes to deploy."
+          finame: Build And Sync Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-sync:
+    name: Build and sync to target repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Load deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.PAGES_DEPLOY_KEY }}
+
+      - name: Trust GitHub SSH host
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Sync dist folder to target repository
+        env:
+          TARGET_REPO: Jupresson/jupresson.github.io
+        run: |
+          set -euo pipefail
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          rm -rf target-repo
+          git clone "git@github.com:${TARGET_REPO}.git" target-repo
+
+          CNAME_FILE=""
+          if [ -f target-repo/CNAME ]; then
+            CNAME_FILE=$(cat target-repo/CNAME)
+          fi
+
+          find target-repo -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+          cp -R dist/. target-repo/
+          touch target-repo/.nojekyll
+
+          if [ -n "$CNAME_FILE" ]; then
+            printf "%s\n" "$CNAME_FILE" > target-repo/CNAME
+          fi
+
+          cd target-repo
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "deploy: sync built site from source repo"
+            git push origin main
+          else
+            echo "No changes to deploy."
+          fi

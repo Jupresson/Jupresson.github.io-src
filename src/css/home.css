@@ -1,0 +1,7 @@
+/* Home page specific styles - common styles moved to base.css */
+
+.skills-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--gap-md);
+}

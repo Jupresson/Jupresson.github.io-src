@@ -1,0 +1,49 @@
+---
+import { getPageEntry, pageEntries } from "../content/siteContent";
+import HomePage from "../templates/HomePage.astro";
+import ProjectDetailPage from "../templates/ProjectDetailPage.astro";
+import ProjectListPage from "../templates/ProjectListPage.astro";
+import {
+  getLocaleFromPathname,
+  localizePath,
+  locales,
+  stripLocaleFromPathname,
+  type HomePageContent,
+  type ProjectDetailPageContent,
+  type ProjectListPageContent,
+} from "../i18n/site";
+
+export function getStaticPaths() {
+  return pageEntries.flatMap((pageEntry) =>
+    locales.map((locale) => {
+      const localizedPath = localizePath(pageEntry.slug, locale);
+
+      return {
+        params: {
+          route: localizedPath === "/" ? undefined : localizedPath.slice(1),
+        },
+      };
+    }),
+  );
+}
+
+const pathname = Astro.params.route ? `/${Astro.params.route}` : "/";
+const locale = getLocaleFromPathname(pathname);
+const slug = stripLocaleFromPathname(pathname);
+const pageEntry = getPageEntry(slug);
+
+if (!pageEntry) {
+  throw new Error(`Missing page content for slug: ${slug}`);
+}
+
+const pageContent = pageEntry.content[locale];
+const homePageContent = pageContent.kind === "home" ? (pageContent as HomePageContent) : undefined;
+const projectListPageContent =
+  pageContent.kind === "project-list" ? (pageContent as ProjectListPageContent) : undefined;
+const projectDetailPageContent =
+  pageContent.kind === "project-detail" ? (pageContent as ProjectDetailPageContent) : undefined;
+---
+
+{homePageContent && <HomePage locale={locale} content={homePageContent} />}
+{projectListPageContent && <ProjectListPage locale={locale} content={projectListPageContent} />}
+{projectDetailPageContent && <ProjectDetailPage locale={locale} content={projectDetailPageContent} />}

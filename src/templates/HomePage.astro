@@ -1,0 +1,111 @@
+---
+import LinksSection from "../components/links.astro";
+import Project from "../components/Project.astro";
+import { getUiContent, } from "../content/siteContent";
+import { formatTemplate, localizePath, type HomePageContent, type Locale } from "../i18n/site";
+import Layout from "../layouts/Layout.astro";
+import "../css/home.css";
+import "../css/links.css";
+
+const { locale, content } = Astro.props as {
+  locale: Locale;
+  content: HomePageContent;
+};
+
+const ui = getUiContent(locale);
+
+const birthYear = 2008;
+const birthMonth = 0; // January
+const today = new Date();
+let age = today.getFullYear() - birthYear;
+const monthDiff = today.getMonth() - birthMonth;
+
+if (monthDiff < 0) {
+  age--;
+}
+---
+
+<Layout title={content.metaTitle}>
+  <div class="cr hero">
+    <div class="hero-text">
+      <h1>{content.hero.name}</h1>
+      <p class="wp">{formatTemplate(content.hero.taglineTemplate, { age })}</p>
+      <p set:html={content.hero.introHtml}></p>
+    </div>
+    <img class="img img--hero" src={content.hero.image} alt={content.hero.imageAlt} />
+  </div>
+
+  <div class="cr">
+    <h2>{content.moreAbout.title}</h2>
+    <p>
+      <span set:html={content.moreAbout.introHtml}></span>
+      <details class="read-more">
+        <summary>{content.moreAbout.summaryLabel}</summary>
+        {content.moreAbout.paragraphs.map((paragraph) => (
+          <p set:html={paragraph}></p>
+        ))}
+        <span class="show-less">{content.moreAbout.showLessLabel}</span>
+      </details>
+    </p>
+  </div>
+
+  <div class="cr">
+    <h2>{content.featuredProjects.title}</h2>
+
+    <div class="projects-grid">
+      {content.featuredProjects.items.map((item) => (
+        <Project
+          title={item.title}
+          description={item.description}
+          image={item.image}
+          technologies={item.technologies}
+          websiteUrl={item.path ? localizePath(item.path, locale) : undefined}
+          sourceUrl={item.sourceUrl}
+          detailsLabel={ui.buttons.details}
+          sourceLabel={ui.buttons.source}
+        />
+      ))}
+    </div>
+
+    <div class="vmp">
+      <a href={localizePath("/ProjectListPage", locale)} class="vmp">
+        {ui.buttons.viewMoreProjects}
+        <span class="vmp-icon"
+          ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span
+        >
+      </a>
+    </div>
+  </div>
+
+  <div class="cr">
+    <h2>{content.skills.title}</h2>
+    <table class="feature-table">
+      {content.skills.rows.map((row) => (
+        <tr>
+          <td class="label">{row.label}</td>
+          <td class="value">{row.value}</td>
+        </tr>
+      ))}
+    </table>
+    <div class="skills-footer">
+      <a href={locale === "fi" ? "/LasseJaara_CV_FI.pdf" : "/LasseJaara_CV_EN.pdf"} download class="btn">
+        {ui.buttons.downloadCV}
+      </a>
+    </div>
+  </div>
+
+  <div class="cr">
+    <h2>{content.contact.title}</h2>
+    <LinksSection
+      email={content.contact.email}
+      emailTitle={content.contact.emailTitle}
+      emailDescription={content.contact.emailDescription}
+      socialTitle={content.contact.socialTitle}
+      socialDescription={content.contact.socialDescription}
+      socialLinks={content.contact.socialLinks}
+      copiedLabel={ui.buttons.copiedEmail}
+    />
+  </div>
+
+  <script is:inline src="/ReadMoreToggle.js"></script>
+</Layout>

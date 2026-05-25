@@ -1,0 +1,86 @@
+.contact {
+	padding: 1.5rem 1.5rem;
+	background: var(--bg-dark);
+	color: var(--text);
+}
+
+.contact__content {
+	max-width: 720px;
+	margin: 0 auto;
+	background: var(--bg-gradient);
+	border: 1px solid var(--border-muted);
+	border-top: solid 1px var(--highlight);
+	border-radius: var(--base-border-radius);
+	padding: 2.5rem;
+	transition: all 0.3s ease;
+}
+
+.contact__content:hover {
+	background: var(--bg-gradient-hover);
+	border: 1px solid var(--border);
+	border-top: solid 1px var(--highlight);
+}
+
+.contact__content h2 {
+	margin: 0 0 0.5rem;
+	font-size: var(--important-font-size);
+	letter-spacing: -0.02em;
+}
+
+.contact__content p {
+	margin: 0 0 2rem;
+	color: var(--text-muted);
+    font-weight: var(--muted-text-weight);
+}
+
+.contact__email-btn {
+    border-radius: var(--base-border-radius);
+	width: 100%;
+	padding: 1.2rem 1.5rem;
+	background: var(--bg-light);
+	border: none;
+	outline: none;
+	color: var(--text);
+	font-size: var(--description-font-size);
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin-bottom: 2rem;
+	word-break: break-all;
+	overflow-wrap: anywhere;
+}
+
+.contact__email-btn:hover {
+	background: var(--action-bg);
+	color: var(--action-text);
+	transform: translateY(-2px);
+}
+
+.contact__email-btn:active {
+	transform: translateY(0);
+}
+
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-top: 1.5rem;
+}
+
+/* .btn styles moved to base.css */
+
+@media (max-width: 640px) {
+	.contact__content {
+		padding: 2rem 1.5rem;
+	}
+
+	.contact__content h2 {
+		font-size: 1.65rem;
+	}
+
+	.contact__email-btn {
+		font-size: 0.9rem;
+		padding: 1rem 1rem;
+	}
+}

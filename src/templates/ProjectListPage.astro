@@ -1,0 +1,43 @@
+---
+import Project from "../components/Project.astro";
+import { getUiContent } from "../content/siteContent";
+import { localizePath, type Locale, type ProjectListPageContent } from "../i18n/site";
+import Layout from "../layouts/Layout.astro";
+import "../css/home.css";
+
+const { locale, content } = Astro.props as {
+  locale: Locale;
+  content: ProjectListPageContent;
+};
+
+const ui = getUiContent(locale);
+---
+
+<Layout title={content.metaTitle}>
+  <div class="cr">
+    <div class="hero">
+      <div class="hero-text">
+        <h1 class="project-page-first-header">{content.hero.title}</h1>
+        <p class="wp">{content.hero.subtitle}</p>
+        <p>{content.intro}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr">
+    <div class="projects-grid">
+      {content.items.map((item) => (
+        <Project
+          title={item.title}
+          description={item.description}
+          image={item.image}
+          technologies={item.technologies}
+          websiteUrl={item.path ? localizePath(item.path, locale) : undefined}
+          sourceUrl={item.sourceUrl}
+          detailsLabel={ui.buttons.details}
+          sourceLabel={ui.buttons.source}
+        />
+      ))}
+    </div>
+  </div>
+</Layout>

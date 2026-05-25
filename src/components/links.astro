@@ -1,0 +1,58 @@
+---
+// Contact component with props
+interface Props {
+	email?: string;
+	emailTitle?: string;
+	emailDescription?: string;
+	socialTitle: string;
+	socialDescription: string;
+	copiedLabel?: string;
+	socialLinks: Array<{
+		name: string;
+		url: string;
+		icon: string; // SVG string or image path
+	}>;
+}
+
+const {
+	email,
+	emailTitle,
+	emailDescription,
+	socialTitle,
+	socialDescription,
+	copiedLabel = "Copied :]",
+	socialLinks
+} = Astro.props;
+
+const escapedEmail = email?.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+const escapedCopiedLabel = copiedLabel.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+---
+
+<section id="contact" class="contact">
+	<div class="contact__content">
+		{email && emailTitle && emailDescription && (
+			<>
+				<h2>{emailTitle}</h2>
+				<p>{emailDescription}</p>
+
+				<button
+					type="button"
+					class="contact__email-btn"
+					onclick={`navigator.clipboard.writeText('${escapedEmail}'); this.textContent = '${escapedCopiedLabel}'; setTimeout(() => this.textContent = '${escapedEmail}', 2000);`}
+				>
+					{email}
+				</button>
+			</>
+		)}
+
+		<h2>{socialTitle}</h2>
+		<p>{socialDescription}</p>
+		<div class="social-links">
+			{socialLinks.map(link => (
+				<a href={link.url} target="_blank" rel="noopener noreferrer" class="btn">
+					{link.name} <span class="btn-icon" set:html={link.icon}></span>
+				</a>
+			))}
+		</div>
+	</div>
+</section>

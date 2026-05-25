@@ -1,0 +1,112 @@
+---
+import LinksSection from "../components/links.astro";
+import { getUiContent } from "../content/siteContent";
+import { localizePath, type Locale, type ProjectDetailPageContent } from "../i18n/site";
+import Layout from "../layouts/Layout.astro";
+import "../css/links.css";
+import "../css/projectpagebase.css";
+
+const { locale, content } = Astro.props as {
+  locale: Locale;
+  content: ProjectDetailPageContent;
+};
+
+const ui = getUiContent(locale);
+const showBeanLevelUp = content.hero.imageClass === "img-bean-small";
+const showWebProjectBurst =
+  content.hero.imageClass === "img-web-project" || content.hero.imageClass === "img-click";
+---
+
+<Layout title={content.metaTitle}>
+  <div class="cr">
+    <div class="hero">
+      <div class="hero-text">
+        <h1 class:list={["project-page-first-header", content.hero.titleClass]} set:html={content.hero.title}></h1>
+        <p class="wp">{content.hero.subtitle}</p>
+        <p>{content.hero.description}</p>
+      </div>
+      <div class:list={["home-hero__image-wrap", { "home-hero__image-wrap--bean": showBeanLevelUp, "home-hero__image-wrap--burst": showWebProjectBurst }]}>
+        <img class:list={["img img--detail", content.hero.imageClass]} src={content.hero.image} alt={content.hero.imageAlt} />
+        {showWebProjectBurst && <div class="home-hero__burst" aria-hidden="true"></div>}
+      </div>
+    </div>
+  </div>
+
+  <div class="cr">
+    <h2>{content.story.title}</h2>
+    <p>
+      <span set:html={content.story.introHtml}></span>
+      <details class="read-more">
+        <summary>{content.story.summaryLabel}</summary>
+        {content.story.paragraphs.map((paragraph) => (
+          <p set:html={paragraph}></p>
+        ))}
+        <span class="show-less">{content.story.showLessLabel}</span>
+      </details>
+    </p>
+  </div>
+
+  <div class="cr">
+    <h2>{content.details.title}</h2>
+    <table class="feature-table">
+      {content.details.rows.map((row) => (
+        <tr>
+          <td class="label">{row.label}</td>
+          <td class="value">{row.value}</td>
+        </tr>
+      ))}
+    </table>
+  </div>
+
+  {content.video && (
+    <div class="cr">
+      <h2>{content.video.title}</h2>
+      <div class="video-container">
+        <iframe
+          src={content.video.embedUrl}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  )}
+
+  {content.links && (
+    <div class="cr">
+      <h2>{content.links.title}</h2>
+      <LinksSection
+        socialTitle={content.links.socialTitle}
+        socialDescription={content.links.socialDescription}
+        socialLinks={content.links.socialLinks}
+        copiedLabel={ui.buttons.copiedEmail}
+      />
+
+      <div class="vmp">
+        <a href={localizePath("/ProjectListPage", locale)} class="vmp">
+          {content.backLinkText}
+          <span class="vmp-icon"
+            ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span
+          >
+        </a>
+      </div>
+    </div>
+  )}
+
+  {!content.links && (
+    <div class="cr">
+      <div class="vmp">
+        <a href={localizePath("/ProjectListPage", locale)} class="vmp">
+          {content.backLinkText}
+          <span class="vmp-icon"
+            ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span
+          >
+        </a>
+      </div>
+    </div>
+  )}
+
+  <script is:inline src="/ReadMoreToggle.js"></script>
+</Layout>

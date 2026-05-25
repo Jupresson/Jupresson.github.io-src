@@ -1,0 +1,19 @@
+---
+import "../css/footer.css"
+
+interface Props {
+	availabilityText?: string;
+}
+
+const {
+	availabilityText = "Open to game jams, collaborations, and work offers!",
+} = Astro.props
+const year = new Date().getFullYear()
+---
+
+<footer class="footer">
+	<div class="container footer__inner">
+		<p class="footer__left">© {year} Lasse Jaara</p>
+		<p class="footer__right">{availabilityText}</p>
+	</div>
+</footer>

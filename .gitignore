@@ -1,8 +1,10 @@
 ### Node
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+
+# !Needed for github actions BUILD and SYNC job
+#package-lock.json
+#yarn.lock
+#pnpm-lock.yaml
 
 ### Build output
 dist/

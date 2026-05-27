@@ -64,7 +64,7 @@ export const uiContent: Record<Locale, UiContent> = {
     buttons: {
       details: "Details",
       source: "Source",
-      copiedEmail: "Copied  :]",
+      copiedEmail: "Copied :]",
       viewMoreProjects: "View more projects",
       downloadCV: "Download CV",
     },
@@ -82,7 +82,7 @@ export const uiContent: Record<Locale, UiContent> = {
     buttons: {
       details: "Lisätiedot",
       source: "Lähde",
-      copiedEmail: "Kopioitu  :]",
+      copiedEmail: "Kopioitu :]",
       viewMoreProjects: "Katso lisää projekteja",
       downloadCV: "Lataa CV",
     },
@@ -104,12 +104,12 @@ const homePageContent: Record<Locale, HomePageContent> = {
     moreAbout: {
       title: "More about me",
       introHtml:
-        "Hi, I'm <strong>Lasse Jaara</strong>, a game developer who likes <strong>creating engaging games for players</strong>. I usually go online under the name <strong>Jupresson</strong>. I first discovered my passion as a child",
+        "Hi, I'm <strong>Lasse Jaara</strong>, a game developer who likes <strong>creating fun and player-focused games</strong>. I usually go online under the name <strong>Jupresson</strong>. I first discovered my passion as a child",
       summaryLabel: "Show more",
       paragraphs: [
         "making custom maps with my brother on the PS3 in games like Legacy Minecraft and LittleBigPlanet Karting. This interest grew into PC gaming, where I began developing and modifying mods, plugins, and servers for Minecraft Java Edition.",
         "Over time, I shifted my focus to building full games, experimenting with Unity and Unreal Engine. My skills advanced significantly after enrolling in OSAO Kaukovainio Technical School for Game Programming and IT, where I gained deeper knowledge of programming and game development and completed several projects.",
-        "Nowadays, I have prototyped games using Unity, Godot, GDScript, Python, C#, and more. I am passionate about mastering my game development skills.",
+        "Nowadays, I have prototyped games using Unity, Godot, GDScript, Python, C#, and more. I am passionate about mastering my development skills.",
       ],
       showLessLabel: "Show less",
     },
@@ -179,12 +179,12 @@ const homePageContent: Record<Locale, HomePageContent> = {
     moreAbout: {
       title: "Lisää minusta",
       introHtml:
-        "Hei, olen <strong>Lasse Jaara</strong>, pelinkehittäjä, joka pitää <strong>mielenkiintoisten pelien tekemisestä pelaajille</strong>. Käytän verkossa usein nimeä <strong>Jupresson</strong>. Kiinnostukseni alkoi jo lapsena",
+        "Hei, olen <strong>Lasse Jaara</strong>, pelinkehittäjä, joka pitää <strong>mielenkiintoisten ja mukaansatempaavien pelien tekemisestä</strong>. Käytän verkossa usein nimeä <strong>Jupresson</strong>. Kiinnostukseni alkoi jo lapsena",
       summaryLabel: "Näytä lisää",
       paragraphs: [
         "tekemällä veljeni kanssa omia peli kenttiä PS3:lla peleihin, kuten Legacy Minecraftiin ja LittleBigPlanet Kartingiin. Kiinnostus kasvoi PC-pelaamiseen, jossa aloin kehittää ja muokata modeja, plugineja ja palvelimia Minecraft Java Editionille.",
         "Ajan myötä siirsin kiinostukseni koko pelejen tekemiseeen ja kokeilin Unitya sekä Unreal Enginea. Taitoni kehittyivät paljon OSAO Kaukovainion peliohjelmoinnin ja IT-opintojen aikana, jolloin sain syvempää osaamista ohjelmoinnista, pelinkehityksestä ja toteutin useita projekteja.",
-        "Nykyään olen tehnyt peliprototyyppejä esimerkiksi Unitylla, Godotilla, GDScriptillä, Pythonilla ja C#:lla. Haluan jatkuvasti kehittää ja työskennellä pelinkehityksen parissa.",
+        "Nykyään olen tehnyt peliprototyyppejä esimerkiksi Unitylla, Godotilla, GDScriptillä, Pythonilla ja C#:lla. Pyrin jatkuvaan kehittymiseen tietokoneiden parissa.",
       ],
       showLessLabel: "Näytä vähemmän",
     },
@@ -259,6 +259,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
         image: "/ProjectPortfolioWebsiteImage.webp",
         technologies: ["HTML", "CSS", "JavaScript", "Astro"],
         path: "/ProjectPortfolioWebsitePage",
+        sourceUrl: "https://github.com/Jupresson/Jupresson.github.io-src"
       },
       {
         title: "Bean with the Guns",
@@ -317,12 +318,13 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
     intro: "Projektit on järjestetty uusimmasta vanhimpaan.",
     items: [
       {
-        title: "Portfolio Website",
+        title: "Portfolio Nettisivu",
         description:
           "Henkilökohtainen portfolio, joka on suunniteltu, koodattu ja hiottu kolmessa versiossa projektieni ja taitojeni esittelemiseen.",
         image: "/ProjectPortfolioWebsiteImage.webp",
         technologies: ["HTML", "CSS", "JavaScript", "Astro"],
         path: "/ProjectPortfolioWebsitePage",
+        sourceUrl: "https://github.com/Jupresson/Jupresson.github.io-src"
       },
       {
         title: "Bean with the Guns",
@@ -765,6 +767,18 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
         { label: "Main Roles:", value: "Designer & Developer" },
       ],
     },
+    links: {
+      title: "Project links",
+      socialTitle: "Find the project on",
+      socialDescription:
+        "Check out my code, download the desktop version, or play it in your browser",
+      socialLinks: [
+        sourceCodeLink(
+          "Source Code",
+          "https://github.com/Jupresson/Jupresson.github.io-src",
+        ),
+      ],
+    },
     backLinkText: "View more projects",
   },
   fi: {
@@ -801,6 +815,18 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
         { label: "Ohjelmointikieli:", value: "HTML, CSS, JavaScript & Astro" },
         { label: "Tiimin koko:", value: "Solo" },
         { label: "Pääroolit:", value: "Suunnittelija ja kehittäjä" },
+      ],
+    },
+    links: {
+      title: "Projektin linkit",
+      socialTitle: "Löydä projekti täältä",
+      socialDescription:
+        "Tutustu koodiin, lataa työpöytäversio tai pelaa selaimessa",
+      socialLinks: [
+        sourceCodeLink(
+          "Lähdekoodi",
+          "https://github.com/Jupresson/Jupresson.github.io-src",
+        ),
       ],
     },
     backLinkText: "Katso lisää projekteja",

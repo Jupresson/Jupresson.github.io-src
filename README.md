@@ -147,3 +147,13 @@ public/
 - Some content includes HTML directly in the data file, so edits should be made carefully.
 - If you change `astro.config.mjs`, keep the `site` and `base` values aligned with the published GitHub Pages URL.
 - There is no separate test suite in this repo yet; the main quality check is `npm run build` plus the GitHub Actions deployment workflow.
+
+## Next todo
+
+
+- Add source link to each project card
+- Clean up code (language, site structure, card creation) By refactoring with the grill-with-docs andimprove-codebase-architecture agent skill by mattpocock
+- Add a primary color to main actions/buttons
+- Done 1/3 Improve text for clarity and tone
+- Fix email button text scaling on mobile
+- Fix header layout on mobile (all buttons should stay on one line; currently only Home and Project do)

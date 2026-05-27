@@ -38,6 +38,7 @@ export interface UiContent {
     copiedEmail: string;
     viewMoreProjects: string;
     downloadCV: string;
+    badges: string;
   };
 }
 

@@ -67,6 +67,7 @@ export const uiContent: Record<Locale, UiContent> = {
       copiedEmail: "Copied :]",
       viewMoreProjects: "View more projects",
       downloadCV: "Download CV",
+      badges: "Badges",
     },
   },
   fi: {
@@ -85,6 +86,7 @@ export const uiContent: Record<Locale, UiContent> = {
       copiedEmail: "Kopioitu :]",
       viewMoreProjects: "Katso lisää projekteja",
       downloadCV: "Lataa CV",
+      badges: "Osaamismerkit",
     },
   },
 };
@@ -407,7 +409,7 @@ const beanWithTheGunsContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "3D Roguelike, bullet hell game" },
         { label: "Project Timeline:", value: "Feb 9, 2026 - Mar 1, 2026" },
-        { label: "Project Duration:", value: "3 weeks = (20 days)" },
+        // removed Project Duration
         { label: "Project Status:", value: "Prototype" },
         { label: "Game engine:", value: "Godot 4.6.1" },
         { label: "Programming language:", value: "Godot 4.6.1 GDScript" },
@@ -468,7 +470,7 @@ const beanWithTheGunsContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "3D roguelike bullet hell -peli" },
         { label: "Projektin aikajana:", value: "9.2.2026 - 1.3.2026" },
-        { label: "Projektin kesto:", value: "3 viikkoa = (20 päivää)" },
+        // removed Projektin kesto
         { label: "Projektin tila:", value: "Prototyyppi" },
         { label: "Pelimoottori:", value: "Godot 4.6.1" },
         { label: "Ohjelmointikieli:", value: "Godot 4.6.1 GDScript" },
@@ -530,7 +532,7 @@ const crystalCaveContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "2D Platformer" },
         { label: "Project Timeline:", value: "X X, 2025 - Apr 15, 2025" },
-        { label: "Project Duration:", value: "2 months = (61 days)" },
+        // removed Project Duration
         { label: "Project Status:", value: "Demo" },
         { label: "Game engine:", value: "Godot 4.3" },
         { label: "Programming language:", value: "Godot 4.3 GDScript" },
@@ -588,7 +590,7 @@ const crystalCaveContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "2D tasohyppely" },
         { label: "Projektin aikajana:", value: "X X, 2025 - 15.4.2025" },
-        { label: "Projektin kesto:", value: "2 kuukautta = (61 päivää)" },
+        // removed Projektin kesto
         { label: "Projektin tila:", value: "Demo" },
         { label: "Pelimoottori:", value: "Godot 4.3" },
         { label: "Ohjelmointikieli:", value: "Godot 4.3 GDScript" },
@@ -651,7 +653,7 @@ const hellSlayerContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "First-Person Dungeon Crawler" },
         { label: "Project Timeline:", value: "Feb 10 2025 - Jun 1 2025" },
-        { label: "Project Duration:", value: "3 months, 22 days = (111 days)" },
+        // removed Project Duration
         { label: "Project Status:", value: "Prototype" },
         { label: "Game engine:", value: "Unity 6" },
         { label: "Programming language:", value: "C#" },
@@ -706,7 +708,7 @@ const hellSlayerContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "Ensimmäisen persoonan luolastoryömintä" },
         { label: "Projektin aikajana:", value: "10.2.2025 - 1.6.2025" },
-        { label: "Projektin kesto:", value: "3 kuukautta, 22 päivää = (111 päivää)" },
+        // removed Projektin kesto
         { label: "Projektin tila:", value: "Prototyyppi" },
         { label: "Pelimoottori:", value: "Unity 6" },
         { label: "Ohjelmointikieli:", value: "C#" },
@@ -759,8 +761,8 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
       title: "Project Details",
       rows: [
         { label: "Type:", value: "Static Website" },
-        { label: "Project Timeline:", value: "X X, 2025 - Mar 17, 2026" },
-        { label: "Project Duration:", value: "12+ months (365+ days)" },
+        { label: "Project Timeline:", value: "X X, 2025 - X X, 2026" },
+        // removed Project Duration
         { label: "Project Status:", value: "Release" },
         { label: "Programming language:", value: "HTML, CSS, JavaScript & Astro" },
         { label: "Team size:", value: "Solo" },
@@ -809,8 +811,8 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
       title: "Projektin tiedot",
       rows: [
         { label: "Tyyppi:", value: "Staattinen verkkosivusto" },
-        { label: "Projektin aikajana:", value: "X X, 2025 - 17.3.2026" },
-        { label: "Projektin kesto:", value: "12+ kuukautta (365+ päivää)" },
+        { label: "Projektin aikajana:", value: "X X, 2025 - X X, 2026" },
+        // removed Projektin kesto
         { label: "Projektin tila:", value: "Julkaistu" },
         { label: "Ohjelmointikieli:", value: "HTML, CSS, JavaScript & Astro" },
         { label: "Tiimin koko:", value: "Solo" },
@@ -866,7 +868,7 @@ const riseOfTheFallenContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "First-Person Stage-Based Shooter" },
         { label: "Project Timeline:", value: "Aug 19, 2025 - Dec 19, 2025" },
-        { label: "Project Duration:", value: "4 months = (122 days)" },
+        // removed Project Duration
         { label: "Project Status:", value: "Demo" },
         { label: "Game engine:", value: "Unreal Engine 5.6.1" },
         { label: "Programming language:", value: "Unreal Engine 5.6.1 Blueprints" },
@@ -933,7 +935,7 @@ const riseOfTheFallenContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "Ensimmäisen persoonan kenttäpohjainen räiskintä" },
         { label: "Projektin aikajana:", value: "19.8.2025 - 19.12.2025" },
-        { label: "Projektin kesto:", value: "4 kuukautta = (122 päivää)" },
+        // removed Projektin kesto
         { label: "Projektin tila:", value: "Demo" },
         { label: "Pelimoottori:", value: "Unreal Engine 5.6.1" },
         { label: "Ohjelmointikieli:", value: "Unreal Engine 5.6.1 Blueprints" },
@@ -1000,7 +1002,7 @@ const summerGameContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "2D Top-Down Clicking Game" },
         { label: "Project Timeline:", value: "X X, 2025 - X X, 2025" },
-        { label: "Project Duration:", value: "3 weeks = (21 days)" },
+        // removed Project Duration
         { label: "Project Status:", value: "Prototype" },
         { label: "Game engine:", value: "Pygame-CE 2.5.5" },
         { label: "Programming language:", value: "Python" },
@@ -1057,7 +1059,7 @@ const summerGameContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "2D ylhäältä kuvattu klikkailupeli" },
         { label: "Projektin aikajana:", value: "X X, 2025 - X X, 2025" },
-        { label: "Projektin kesto:", value: "3 viikkoa = (21 päivää)" },
+        // removed Projektin kesto
         { label: "Projektin tila:", value: "Prototyyppi" },
         { label: "Pelimoottori:", value: "Pygame-CE 2.5.5" },
         { label: "Ohjelmointikieli:", value: "Python" },

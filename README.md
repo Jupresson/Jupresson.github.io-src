@@ -111,7 +111,3 @@ public/
 - Some content includes HTML directly in the data file, so edits should be made carefully.
 - If you change `astro.config.mjs`, keep the `site` and `base` values aligned with the published GitHub Pages URL.
 - There is no separate test suite in this repo yet; the main quality check is `npm run build` plus the GitHub Actions deployment workflow.
-
-## License
-
-No license has been specified yet.

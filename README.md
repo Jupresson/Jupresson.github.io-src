@@ -77,6 +77,42 @@ npm run preview
 
 ## Build And Deploy
 
+
+### Creating the PAGES_DEPLOY_KEY (Windows 11)
+
+To enable deployment, you need to create and configure a deploy key:
+
+1. **Generate a new SSH key (windous 11):**
+
+	Open PowerShell and run:
+
+	```powershell
+	ssh-keygen -t ed25519 -C "github-actions deploy key" -f "$env:USERPROFILE\.ssh\pages_deploy_key"
+	```
+
+	(Press Enter for passphrase prompts to leave empty.)
+
+2. **Add the public key to your target repository:**
+
+	- Go to your target repo (e.g., `Jupresson/jupresson.github.io`) on GitHub.
+	- Settings → Deploy keys → Add deploy key.
+	- Paste the contents of `%USERPROFILE%\.ssh\pages_deploy_key.pub`.
+	- Give it a name (e.g., "GitHub Actions Deploy Key").
+	- Check "Allow write access".
+	- Save.
+
+3. **Add the private key as a secret in your source repository:**
+
+	- Go to your source repo (e.g., `Jupresson.github.io-src`) on GitHub.
+	- Settings → Secrets and variables → Actions → New repository secret.
+	- Name: `PAGES_DEPLOY_KEY`
+	- Value: Paste the contents of `%USERPROFILE%\.ssh\pages_deploy_key` (the private key, not `.pub`).
+	- Save.
+
+Your workflow will now be able to deploy using this key.
+
+---
+
 GitHub Actions handles the build and publish flow.
 
 - The workflow runs on pushes to `main` and can also be started manually.

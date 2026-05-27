@@ -1,4 +1,4 @@
-/// <reference types="astro/client" />
+// Removed reference to missing 'astro/client' type definition
 
 declare module "astro/config" {
 	export function defineConfig(config: any): any;

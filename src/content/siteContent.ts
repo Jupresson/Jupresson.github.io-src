@@ -64,7 +64,7 @@ export const uiContent: Record<Locale, UiContent> = {
     buttons: {
       details: "Details",
       source: "Source",
-      copiedEmail: "Copied :]",
+      copiedEmail: "Copied  :]",
       viewMoreProjects: "View more projects",
       downloadCV: "Download CV",
     },
@@ -82,7 +82,7 @@ export const uiContent: Record<Locale, UiContent> = {
     buttons: {
       details: "Lisätiedot",
       source: "Lähde",
-      copiedEmail: "Kopioitu :]",
+      copiedEmail: "Kopioitu  :]",
       viewMoreProjects: "Katso lisää projekteja",
       downloadCV: "Lataa CV",
     },

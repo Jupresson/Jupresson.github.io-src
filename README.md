@@ -1,38 +1,56 @@
 # Jupresson Portfolio
+A solo-designed and developed **personal portfolio website** built with Astro, showcasing projects and skills across three iterative versions with full two langue support.
 
-Personal portfolio and project website for Jupresson, built with Astro and published as a static site in English and Finnish.
+<table><tr>
+<td>
+<table>
+  <tr><td><b>Type</b></td><td>Static Website</td></tr>
+  <tr><td><b>Framework</b></td><td>Astro 6</td></tr>
+  <tr><td><b>Languages</b></td><td>HTML, CSS, JavaScript & TypeScript</td></tr>
+  <tr><td><b>Timeline</b></td><td>X X, 2025 – X X, 2026</td></tr>
+  <tr><td><b>Status</b></td><td>Release · Solo</td></tr>
+  <tr><td><b>Role</b></td><td>Designer & Developer</td></tr>
+  <tr><td><b>Deployment</b></td><td>GitHub Pages</td></tr>
+</table>
+</td>
+<td align="right">
+  <img src="https://jupresson.github.io/ProjectPortfolioWebsiteImageSmall.webp" width="500" alt="Jupresson Portfolio"><br/>
+  <a href="https://jupresson.github.io/">Live site →</a>
+</td>
+</tr></table>
 
-Live site: https://Jupresson.github.io/
+---
 
-## What it is
+## Technical Highlights
 
-This repo is the source for the portfolio. It generates a homepage, a project list, and individual project pages from shared content data instead of hand-writing every page.
+**Architecture**
+- Content-driven routing: all page text, project data, and locale copy live in `src/content/siteContent.ts`, with a single catch-all route generating every static page from it.
+- Reusable Astro components for header, footer, project cards, and link sections — eliminating repeated markup across pages.
+- Locale detection and bilingual path generation handled through `src/i18n/site.ts`, supporting full English and Finnish navigation and content.
 
-The site is designed to help a visitor understand the work quickly:
+**Frontend**
+- Fully responsive layout scaling cleanly across mobile, tablet, and desktop — full mobile support was a primary design goal.
+- Lightweight client-side JavaScript for dark/light theme switching and expandable read-more sections (`public/ReadMoreToggle.js`), keeping the rest of the site purely static.
 
-- bilingual navigation and content in English and Finnish
-- featured projects with dedicated detail pages
-- expandable long-form sections for readable project and bio text
-- CV downloads and social/contact links from the home page
-- static assets for project images, icons, and documents
+**Build & Deploy**
+- GitHub Actions workflow triggered on pushes to `main`: installs with `npm ci`, builds to `dist/`, then pushes the output to a separate GitHub Pages repo using a deploy key.
+- Source repo stays focused on the Astro app; the Pages repo serves only the generated static files.
 
-## Demo
+---
 
-The deployed site is the best demo: https://Jupresson.github.io/
+## Project Evolution
 
-If you want a quick visual reference, the repo also includes the profile image and project artwork used on the site.
+The site went through three versions before reaching its current form:
 
-## Tech Stack
+1. **v1** — Built from scratch in plain HTML and CSS. Became too messy to scale cleanly.
+2. **v2** — Rebuilt with a cleaner template, but the colors and layout were too visually heavy.
+3. **v3 (current)** — Rebuilt with Astro for reusable components, proper i18n, and a responsive layout that works across all screen sizes.
 
-- Astro 6
-- TypeScript
-- Static site generation
-- GitHub Pages deployment
-- A small amount of client-side JavaScript for theme switching and the read-more toggle
+Each rebuild directly informed better decisions about maintainability and scalability from the start.
+
+---
 
 ## How It Works
-
-The routing and content flow are intentionally simple:
 
 - `src/content/siteContent.ts` stores the page text, project data, and locale-specific copy.
 - `src/pages/[...route].astro` turns the content into all static routes.
@@ -41,6 +59,29 @@ The routing and content flow are intentionally simple:
 - `public/ReadMoreToggle.js` powers the expandable text sections.
 
 Adding or updating a project usually means editing the content data and dropping in a new image under `public/` if needed.
+
+---
+
+## Project Structure
+
+```text
+src/
+├── components/        # Header, footer, project cards, and link sections
+├── content/           # Site text and route data
+├── css/               # Site styling
+├── i18n/              # Helpers for locales, paths, and template strings
+├── layouts/           # Shared layout that adds the header and footer
+├── pages/             # Catch-all routing and static pages
+└── templates/         # Home, project list, and project detail templates
+
+public/
+├── FacePicture.webp
+├── ReadMoreToggle.js
+├── LasseJaara_CV_EN.pdf
+└── LasseJaara_CV_FI.pdf
+```
+
+---
 
 ## Development
 
@@ -68,6 +109,8 @@ Preview the production build:
 npm run preview
 ```
 
+---
+
 ## Editing Content
 
 - Home page, project content, and locale-specific text live in `src/content/siteContent.ts`.
@@ -75,85 +118,48 @@ npm run preview
 - Shared layout and navigation live in `src/layouts/Layout.astro` and `src/components/Header.astro`.
 - The read-more behavior comes from `public/ReadMoreToggle.js`.
 
-## Build And Deploy
+---
 
+## Build & Deploy
 
 ### Creating the PAGES_DEPLOY_KEY (Windows 11)
 
-To enable deployment, you need to create and configure a deploy key:
+1. **Generate a new SSH key:**
 
-1. **Generate a new SSH key (windous 11):**
+   Open PowerShell and run:
 
-	Open PowerShell and run:
+```powershell
+   ssh-keygen -t ed25519 -C "github-actions deploy key" -f "$env:USERPROFILE\.ssh\pages_deploy_key"
+```
 
-	```powershell
-	ssh-keygen -t ed25519 -C "github-actions deploy key" -f "$env:USERPROFILE\.ssh\pages_deploy_key"
-	```
-
-	(Press Enter for passphrase prompts to leave empty.)
+   Press Enter for passphrase prompts to leave empty.
 
 2. **Add the public key to your target repository:**
-
-	- Go to your target repo (e.g., `Jupresson/jupresson.github.io`) on GitHub.
-	- Settings → Deploy keys → Add deploy key.
-	- Paste the contents of `%USERPROFILE%\.ssh\pages_deploy_key.pub`.
-	- Give it a name (e.g., "GitHub Actions Deploy Key").
-	- Check "Allow write access".
-	- Save.
+   - Go to your target repo on GitHub → Settings → Deploy keys → Add deploy key.
+   - Paste the contents of `%USERPROFILE%\.ssh\pages_deploy_key.pub`.
+   - Give it a name (e.g. "GitHub Actions Deploy Key") and check "Allow write access".
 
 3. **Add the private key as a secret in your source repository:**
+   - Go to your source repo → Settings → Secrets and variables → Actions → New repository secret.
+   - Name: `PAGES_DEPLOY_KEY` — paste the contents of the private key file (not `.pub`).
 
-	- Go to your source repo (e.g., `Jupresson.github.io-src`) on GitHub.
-	- Settings → Secrets and variables → Actions → New repository secret.
-	- Name: `PAGES_DEPLOY_KEY`
-	- Value: Paste the contents of `%USERPROFILE%\.ssh\pages_deploy_key` (the private key, not `.pub`).
-	- Save.
-
-Your workflow will now be able to deploy using this key.
+GitHub Actions then handles the full build and publish flow on every push to `main`: installs via `npm ci`, builds to `dist/`, clones the Pages repo, copies the output in, and pushes.
 
 ---
-
-GitHub Actions handles the build and publish flow.
-
-- The workflow runs on pushes to `main` and can also be started manually.
-- It installs dependencies with `npm ci`.
-- It runs `npm run build` to produce the static `dist/` folder.
-- It uses the `PAGES_DEPLOY_KEY` secret to authenticate to the target repository.
-- It clones `Jupresson/jupresson.github.io`, copies the fresh `dist/` output into it, and pushes the updated static site.
-
-This means the source repo stays focused on the Astro app, while the separate GitHub Pages repo serves the generated files.
-
-## Project Structure
-
-```text
-src/
-├── components/        # Header, footer, project cards, and link sections
-├── content/           # Site text and route data
-├── css/               # Site styling
-├── i18n/              # Helpers for locales, paths, and template strings
-├── layouts/           # Shared layout that adds the header and footer
-├── pages/             # Catch-all routing and static pages
-└── templates/         # Home, project list, and project detail templates
-
-public/
-├── FacePicture.webp
-├── ReadMoreToggle.js
-├── LasseJaara_CV_EN.pdf
-└── LasseJaara_CV_FI.pdf
-```
 
 ## Notes
 
 - Some content includes HTML directly in the data file, so edits should be made carefully.
-- If you change `astro.config.mjs`, keep the `site` and `base` values aligned with the published GitHub Pages URL.
-- There is no separate test suite in this repo yet; the main quality check is `npm run build` plus the GitHub Actions deployment workflow.
+- Keep `site` and `base` in `astro.config.mjs` aligned with the published GitHub Pages URL.
+- No separate test suite yet — the main quality check is `npm run build` plus the Actions deployment workflow.
 
-## Next todo
+---
 
-
-- Add source link to each project card
-- Clean up code (language, site structure, card creation) By refactoring with the grill-with-docs andimprove-codebase-architecture agent skill by mattpocock
-- Add a primary color to main actions/buttons
-- Done 1/3 Improve text for clarity and tone
-- Fix email button text scaling on mobile
-- Fix header layout on mobile (all buttons should stay on one line; currently only Home and Project do)
+## Known Issues / Next Steps
+- Project timeline start and end dates not yet filled in.
+- Source link missing from individual project cards — planned addition.
+- Email button text scales incorrectly on mobile.
+- Header layout breaks on mobile — all nav buttons should stay on one line.
+- Codebase refactor planned: language cleanup, improved site structure, and card creation improvements.
+- One of three planned text clarity and tone passes completed.
+- Primary color accent for main action buttons still to be added.

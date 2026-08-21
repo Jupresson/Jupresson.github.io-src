@@ -16,6 +16,13 @@ const { title } = Astro.props
 const locale = getLocaleFromPathname(Astro.url.pathname)
 const ui = getUiContent(locale)
 const pageTitle = title ? `${title} | ${ui.siteTitle}` : ui.siteTitle
+const siteUrl = Astro.site ?? Astro.url
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href
+const description =
+	locale === "fi"
+		? "Lasse Jaaran portfolio: pelinkehitystä, ohjelmointia ja projekteja."
+		: "Lasse Jaara's portfolio of game development, programming, and project work."
+const socialImageUrl = new URL("/ProjectPortfolioWebsiteImage.webp", siteUrl).href
 
 ---
 
@@ -25,7 +32,21 @@ const pageTitle = title ? `${title} | ${ui.siteTitle}` : ui.siteTitle
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/webp" href="/FacePicture.webp" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#0a0a0a" />
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta property="og:site_name" content={ui.siteTitle} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={socialImageUrl} />
+		<meta property="og:locale" content={locale === "fi" ? "fi_FI" : "en_US"} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageUrl} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 		<script is:inline>

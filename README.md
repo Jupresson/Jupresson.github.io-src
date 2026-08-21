@@ -1,5 +1,5 @@
 # Jupresson Portfolio
-A solo-designed and developed **personal portfolio website** built with Astro, showcasing projects and skills across three iterative versions with full two langue support.
+A solo-designed and developed **personal portfolio website** built with Astro, showcasing game-development projects and skills across three iterative versions with full bilingual support.
 
 <table><tr>
 <td>
@@ -31,6 +31,8 @@ A solo-designed and developed **personal portfolio website** built with Astro, s
 **Frontend**
 - Fully responsive layout scaling cleanly across mobile, tablet, and desktop — full mobile support was a primary design goal.
 - Lightweight client-side JavaScript for dark/light theme switching and expandable read-more sections (`public/ReadMoreToggle.js`), keeping the rest of the site purely static.
+- Accessible, semantic project content: keyboard-accessible read-more controls, descriptive image alt text, and native lazy loading for noncritical media.
+- Production metadata includes canonical URLs, search descriptions, Open Graph/Twitter sharing cards, locale tags, and an SVG favicon.
 
 **Build & Deploy**
 - GitHub Actions workflow triggered on pushes to `main`: installs with `npm ci`, builds to `dist/`, then pushes the output to a separate GitHub Pages repo using a deploy key.
@@ -151,15 +153,15 @@ GitHub Actions then handles the full build and publish flow on every push to `ma
 
 - Some content includes HTML directly in the data file, so edits should be made carefully.
 - Keep `site` and `base` in `astro.config.mjs` aligned with the published GitHub Pages URL.
-- No separate test suite yet — the main quality check is `npm run build` plus the Actions deployment workflow.
+- The primary quality check is `npm run build`, which is also run by the deployment workflow.
+- Project-card images and embedded videos use browser-native deferred loading where appropriate to keep initial page loads light.
 
 ---
 
 ## Known Issues / Next Steps
-- Project timeline start and end dates not yet filled in.
-- Source link missing from individual project cards — planned addition.
-- Email button text scales incorrectly on mobile.
-- Header layout breaks on mobile — all nav buttons should stay on one line.
-- Codebase refactor planned: language cleanup, improved site structure, and card creation improvements.
-- One of three planned text clarity and tone passes completed.
-- Primary color accent for main action buttons still to be added.
+- Fill in the remaining project timeline placeholders.
+- Recheck the header and email controls on the smallest supported mobile viewports.
+- Split `src/content/siteContent.ts` into per-project content files as the portfolio grows.
+- Add automated checks for locale routing and the production build.
+- Continue the English and Finnish copy-editing pass.
+- Add a flagship multiplayer project case study with an architecture diagram, technical write-up, playable build, and source link.

@@ -32,21 +32,21 @@ if (monthDiff < 0) {
       <p class="wp">{formatTemplate(content.hero.taglineTemplate, { age })}</p>
       <p set:html={content.hero.introHtml}></p>
     </div>
-    <img class="img img--hero" src={content.hero.image} alt={content.hero.imageAlt} />
+    <img class="img img--hero" src={content.hero.image} alt={content.hero.imageAlt} decoding="async" />
   </div>
 
   <div class="cr">
     <h2>{content.moreAbout.title}</h2>
     <p>
       <span set:html={content.moreAbout.introHtml}></span>
-      <details class="read-more">
-        <summary>{content.moreAbout.summaryLabel}</summary>
-        {content.moreAbout.paragraphs.map((paragraph) => (
-          <p set:html={paragraph}></p>
-        ))}
-        <span class="show-less">{content.moreAbout.showLessLabel}</span>
-      </details>
     </p>
+    <details class="read-more">
+      <summary>{content.moreAbout.summaryLabel}</summary>
+      {content.moreAbout.paragraphs.map((paragraph) => (
+        <p set:html={paragraph}></p>
+      ))}
+      <button type="button" class="show-less">{content.moreAbout.showLessLabel}</button>
+    </details>
   </div>
 
   <div class="cr">
@@ -80,12 +80,14 @@ if (monthDiff < 0) {
   <div class="cr">
     <h2>{content.skills.title}</h2>
     <table class="feature-table">
-      {content.skills.rows.map((row) => (
-        <tr>
-          <td class="label">{row.label}</td>
-          <td class="value">{row.value}</td>
-        </tr>
-      ))}
+      <tbody>
+        {content.skills.rows.map((row) => (
+          <tr>
+            <td class="label">{row.label}</td>
+            <td class="value">{row.value}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
     <div class="skills-footer">
       <a href={locale === "fi" ? "/LasseJaara_CV_FI.pdf" : "/LasseJaara_CV_EN.pdf"} download class="btn">

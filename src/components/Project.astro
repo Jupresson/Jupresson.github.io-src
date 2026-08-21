@@ -38,7 +38,7 @@ const isBeanWithGuns = image.includes("ProjectBeanWithTheGunsImage");
 
 <div class:list={["project-card", { "bean-with-guns": isBeanWithGuns }]}>
   <div class="project-image">
-    <img class="img img--project" src={image} alt={imageAlt} />
+    <img class="img img--project" src={image} alt={imageAlt} loading="lazy" decoding="async" />
     {isBeanWithGuns && <span class="project-image__badge" aria-hidden="true">LEVEL UP!</span>}
   </div>
   

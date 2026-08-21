@@ -380,8 +380,13 @@ p {
 }
 
 .show-less {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
   cursor: pointer;
   color: var(--highlight);
+  font: inherit;
   font-weight: var(--important-text-weight);
   user-select: none;
 }

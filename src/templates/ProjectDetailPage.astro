@@ -26,7 +26,7 @@ const showWebProjectBurst =
         <p>{content.hero.description}</p>
       </div>
       <div class:list={["home-hero__image-wrap", { "home-hero__image-wrap--bean": showBeanLevelUp, "home-hero__image-wrap--burst": showWebProjectBurst }]}>
-        <img class:list={["img img--detail", content.hero.imageClass]} src={content.hero.image} alt={content.hero.imageAlt} />
+        <img class:list={["img img--detail", content.hero.imageClass]} src={content.hero.image} alt={content.hero.imageAlt} decoding="async" />
         {showWebProjectBurst && <div class="home-hero__burst" aria-hidden="true"></div>}
       </div>
     </div>
@@ -36,25 +36,27 @@ const showWebProjectBurst =
     <h2>{content.story.title}</h2>
     <p>
       <span set:html={content.story.introHtml}></span>
-      <details class="read-more">
-        <summary>{content.story.summaryLabel}</summary>
-        {content.story.paragraphs.map((paragraph) => (
-          <p set:html={paragraph}></p>
-        ))}
-        <span class="show-less">{content.story.showLessLabel}</span>
-      </details>
     </p>
+    <details class="read-more">
+      <summary>{content.story.summaryLabel}</summary>
+      {content.story.paragraphs.map((paragraph) => (
+        <p set:html={paragraph}></p>
+      ))}
+      <button type="button" class="show-less">{content.story.showLessLabel}</button>
+    </details>
   </div>
 
   <div class="cr">
     <h2>{content.details.title}</h2>
     <table class="feature-table">
-      {content.details.rows.map((row) => (
-        <tr>
-          <td class="label">{row.label}</td>
-          <td class="value">{row.value}</td>
-        </tr>
-      ))}
+      <tbody>
+        {content.details.rows.map((row) => (
+          <tr>
+            <td class="label">{row.label}</td>
+            <td class="value">{row.value}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   </div>
 
@@ -68,6 +70,7 @@ const showWebProjectBurst =
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
+          loading="lazy"
           allowfullscreen
         ></iframe>
       </div>

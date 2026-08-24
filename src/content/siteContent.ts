@@ -93,12 +93,14 @@ const homePageContent: Record<Locale, HomePageContent> = {
     moreAbout: {
       title: "More about me",
       introHtml:
-        "Hi, I'm <strong>Lasse Jaara</strong>, a game developer who likes <strong>creating fun and player-focused games</strong>. I usually go online under the name <strong>Jupresson</strong>. I first discovered my passion as a child",
+        "Hi, I'm <strong>Lasse Jaara</strong>, a game developer who loves <strong>creating fun, player-focused games</strong>. Online, I usually go by <strong>Jupresson</strong>.",
       summaryLabel: "Show more",
       paragraphs: [
-        "making custom maps with my brother on the PS3 in games like Legacy Minecraft and LittleBigPlanet Karting. This interest grew into PC gaming, where I began developing and modifying mods, plugins, and servers for Minecraft Java Edition.",
-        "Over time, I shifted my focus to building full games, experimenting with Unity and Unreal Engine. My skills advanced significantly after enrolling in OSAO Kaukovainio Technical School for Game Programming and IT, where I gained deeper knowledge of programming and game development and completed several projects.",
-        "Nowadays, I have prototyped games using Unity, Godot, GDScript, Python, C#, and more. I am passionate about mastering my development skills.",
+        "My interest started as a kid, making custom maps with my brother on the PS3 in games like Minecraft: Legacy Console Edition and LittleBigPlanet Karting.",
+        "That curiosity carried over to PC gaming, where I began building and modifying mods, plugins, and servers for Minecraft Java Edition.",
+        "Over time I moved into building full games, experimenting with Unity and Unreal Engine. My skills took a big step forward at OSAO Kaukovainio Technical School, studying Game Programming and IT, where I completed several hands-on projects.",
+        "I have developed and prototyped games using Unity and Godot, working with technologies including GDScript, Python, and C#.",
+        "My goal is to grow into a multiplayer and full-stack game developer. Right now I'm working on projects that build toward exactly that.",
       ],
       showLessLabel: "Show less",
     },
@@ -117,7 +119,7 @@ const homePageContent: Record<Locale, HomePageContent> = {
         {
           title: "Rise Of The Fallen Death Of Mankind",
           description:
-            "Play as a demon unleashed from hell, tearing through human forces across multiple stages fight, dash, and push forward until the world burns.",
+            "Play as a demon unleashed from hell, tearing through human forces across multiple stages. Fight, dash, and push forward until the world burns.",
           image: "/ProjectRiseOfTheFallenDeathOfMankindImage.webp",
           technologies: ["Blueprints", "Blender", "Unreal Engine"],
           path: "/ProjectRiseOfTheFallenDeathOfMankindPage",
@@ -168,12 +170,14 @@ const homePageContent: Record<Locale, HomePageContent> = {
     moreAbout: {
       title: "Lisää minusta",
       introHtml:
-        "Hei, olen <strong>Lasse Jaara</strong>, pelinkehittäjä, joka pitää <strong>mielenkiintoisten ja mukaansatempaavien pelien tekemisestä</strong>. Käytän verkossa usein nimeä <strong>Jupresson</strong>. Kiinnostukseni alkoi jo lapsena",
+        "Hei, olen <strong>Lasse Jaara</strong>, pelinkehittäjä, joka rakastaa <strong>hauskojen ja pelaajalähtöisten pelien tekemistä</strong>. Verkossa käytän yleensä nimeä <strong>Jupresson</strong>.",
       summaryLabel: "Näytä lisää",
       paragraphs: [
-        "tekemällä veljeni kanssa omia peli kenttiä PS3:lla peleihin, kuten Legacy Minecraftiin ja LittleBigPlanet Kartingiin. Kiinnostus kasvoi PC-pelaamiseen, jossa aloin kehittää ja muokata modeja, plugineja ja palvelimia Minecraft Java Editionille.",
-        "Ajan myötä siirsin kiinostukseni koko pelejen tekemiseeen ja kokeilin Unitya sekä Unreal Enginea. Taitoni kehittyivät paljon OSAO Kaukovainion peliohjelmoinnin ja IT-opintojen aikana, jolloin sain syvempää osaamista ohjelmoinnista, pelinkehityksestä ja toteutin useita projekteja.",
-        "Nykyään olen tehnyt peliprototyyppejä esimerkiksi Unitylla, Godotilla, GDScriptillä, Pythonilla ja C#:lla. Pyrin jatkuvaan kehittymiseen tietokoneiden parissa.",
+        "Kiinnostukseni alkoi jo lapsena, kun tein veljeni kanssa omia peli kenttiä PS3:lla peleihin kuten Minecraft: Legacy Console Edition ja LittleBigPlanet Karting.",
+        "Sama into siirtyi PC-pelaamiseen, jossa aloin rakentaa ja muokata modeja, plugineja ja palvelimia Minecraft Java Editionille.",
+        "Ajan myötä siirryin kokonaisten pelien tekemiseen ja kokeilin Unitya sekä Unreal Enginea. Taitoni ottivat ison harppauksen OSAO Kaukovainion peliohjelmoinnin ja IT-opintojen aikana, joissa toteutin useita käytännön projekteja.",
+        "Olen kehittänyt ja prototyypannut pelejä Unitylla ja Godotilla, käyttäen muun muassa GDScriptiä, Pythonia ja C#:ia.",
+        "Tavoitteeni on kasvaa moninpeli- ja full stack -kehittäjäksi. Juuri nyt työstän projekteja, jotka vievät minua kohti sitä.",
       ],
       showLessLabel: "Näytä vähemmän",
     },
@@ -244,7 +248,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
       {
         title: "Portfolio Website",
         description:
-          "A personal portfolio built to showcase my projects and skills designed, coded, and refined from scratch across three versions to get it right.",
+          "A personal portfolio built to showcase my projects and skills. I designed, coded, and refined it from scratch across three versions to get it right.",
         image: "/ProjectPortfolioWebsiteImage.webp",
         technologies: ["HTML", "CSS", "JavaScript", "Astro"],
         path: "/ProjectPortfolioWebsitePage",
@@ -262,7 +266,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
       {
         title: "Rise Of The Fallen<br>Death Of Mankind",
         description:
-          "Play as a demon unleashed from hell, tearing through human forces across multiple stages fight, dash, and push forward until the world burns.",
+          "Play as a demon unleashed from hell, tearing through human forces across multiple stages. Fight, dash, and push forward until the world burns.",
         image: "/ProjectRiseOfTheFallenDeathOfMankindImage.webp",
         technologies: ["Blueprints", "Blender", "Unreal Engine"],
         path: "/ProjectRiseOfTheFallenDeathOfMankindPage",
@@ -271,7 +275,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
       {
         title: "Hell Slayer",
         description:
-          "Fight through waves of enemies in a first-person dungeon crawler collect weapons, adapt your loadout, and see how long you can last.",
+          "Fight through waves of enemies in a first-person dungeon crawler. Collect weapons, adapt your loadout, and see how long you can last.",
         image: "/ProjectHellSlayerImage.webp",
         technologies: ["C#", "Unity", "Blender"],
         path: "/ProjectHellSlayerPage",
@@ -309,7 +313,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
       {
         title: "Portfolio Nettisivu",
         description:
-          "Henkilökohtainen portfolio, joka on suunniteltu, koodattu ja hiottu kolmessa versiossa projektieni ja taitojeni esittelemiseen.",
+          "Henkilökohtainen portfolio, joka esittelee projektejani ja taitojani. Suunnittelin, koodasin ja hioin sen kolmessa versiossa saadakseni sen kohdalleen.",
         image: "/ProjectPortfolioWebsiteImage.webp",
         technologies: ["HTML", "CSS", "JavaScript", "Astro"],
         path: "/ProjectPortfolioWebsitePage",
@@ -336,7 +340,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
       {
         title: "Hell Slayer",
         description:
-          "Taistele vihollisaaltojen läpi ensimmäisen persoonan luolastoryömintäpelissä, kerää aseita ja muokkaa varustusta selviytyäksesi pidempään.",
+          "Taistele vihollisaaltojen läpi ensimmäisen persoonan luolastoryömintäpelissä. Kerää aseita, muokkaa varustusta ja katso, kuinka pitkään selviät.",
         image: "/ProjectHellSlayerImage.webp",
         technologies: ["C#", "Unity", "Blender"],
         path: "/ProjectHellSlayerPage",

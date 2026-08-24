@@ -9,19 +9,19 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
       title: "Portfolio Website",
       subtitle: "Static website made with Astro",
       description:
-        "A personal portfolio built to showcase my projects and skills, designed, coded, and refined from scratch across three versions to get it right.",
+        "A personal portfolio built to showcase my projects and skills. I designed, coded, and refined it from scratch across three versions to get it right.",
       image: "/ProjectPortfolioWebsiteImageSmall.webp",
       imageAlt: "Screenshot of the portfolio website",
     },
     story: {
       title: "Project Development Story",
       introHtml:
-        '<span class="text-highlight">Overview & Teamwork</span><br><strong>This portfolio\'s main purpose is to collect and showcase my projects, serve as proof of my work, and present my experience clearly to anyone reading it.</strong> This was a fully solo project, every part of it was designed, built, and completed by me.',
+        '<span class="text-highlight">Overview & Teamwork</span><br><strong>This portfolio\'s main purpose is to collect and showcase my projects, serve as proof of my work, and present my experience clearly to anyone reading it.</strong> This was a fully solo project. I designed, built, and completed every part of it myself.',
       summaryLabel: "Show more",
       paragraphs: [
         '<span class="text-highlight">Concept & Design</span><br>The idea was to create a <strong>simple static website that presents my projects clearly.</strong> I built the first version from scratch using HTML and CSS in Visual Studio Code, but the codebase became too messy to scale. I then rebuilt it with a cleaner template, but the colors and layout were too heavy on the eyes. The current version is <strong>built with Astro</strong>, which lets me create reusable components like the shared header, and is <strong>fully responsive across many screen sizes.</strong>',
         '<span class="text-highlight">My Role & Challenges</span><br>One of my main goals was <strong>full mobile support</strong>, which required the layout to scale cleanly across all screen sizes. Managing three versions of the site over time also taught me a lot about <strong>writing maintainable and scalable code from the start</strong>, something I learned the hard way by rebuilding it twice.',
-        '<span class="text-highlight">Project Outcome & Lessons Learned</span><br>Overall, building the portfolio was a rewarding experience. <strong>Working with Astro made development much smoother</strong> thanks to its component system. I also got more comfortable <strong>using AI tools to speed up development</strong>, particularly for quickly looking up syntax and HTML tags rather than digging through documentation manually and for helping clean up and improve my written English.',
+        '<span class="text-highlight">Project Outcome & Lessons Learned</span><br>Overall, building the portfolio was a rewarding experience. <strong>Working with Astro made development much smoother</strong> thanks to its component system. I also got more comfortable <strong>using AI tools to speed up development</strong>, particularly to look up syntax and HTML tags fast instead of digging through documentation by hand, and to help clean up and sharpen my written English.',
       ],
       showLessLabel: "Show less",
     },
@@ -57,14 +57,14 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
       title: "Portfolio Website",
       subtitle: "Astrolla tehty staattinen verkkosivusto",
       description:
-        "Henkilökohtainen portfolio, joka on suunniteltu, koodattu ja hiottu kolmessa versiossa projektieni ja taitojeni esittelemiseen.",
+        "Henkilökohtainen portfolio, joka esittelee projektejani ja taitojani. Suunnittelin, koodasin ja hioin sen kolmessa versiossa saadakseni sen kohdalleen.",
       image: "/ProjectPortfolioWebsiteImageSmall.webp",
       imageAlt: "Kuvakaappaus portfoliosivustosta",
     },
     story: {
       title: "Projektin kehitystarina",
       introHtml:
-        '<span class="text-highlight">Yleiskuva & tiimityö</span><br><strong>Tämän portfolion päätarkoitus on kerätä ja esitellä projektini, toimia todisteena tekemisestäni ja kertoa kokemuksestani selkeästi kaikille lukijoille.</strong> Tämä oli täysin yksin tehty projekti, jonka jokainen osa suunniteltiin, rakennettiin ja viimeisteltiin minun toimesta.',
+        '<span class="text-highlight">Yleiskuva & tiimityö</span><br><strong>Tämän portfolion päätarkoitus on kerätä ja esitellä projektini, toimia todisteena tekemisestäni ja kertoa kokemuksestani selkeästi kaikille lukijoille.</strong> Tämä oli täysin yksin tehty projekti. Suunnittelin, rakensin ja viimeistelin jokaisen osan itse.',
       summaryLabel: "Näytä lisää",
       paragraphs: [
         '<span class="text-highlight">Konsepti & suunnittelu</span><br>Ajatuksena oli tehdä <strong>yksinkertainen staattinen verkkosivusto, joka esittelee projektini selkeästi.</strong> Rakensin ensimmäisen version alusta asti HTML:llä ja CSS:llä Visual Studio Codessa, mutta koodipohja muuttui liian sekavaksi skaalautumaan. Rakensin sen sitten uudelleen siistimmän mallin päälle, mutta värit ja layout rasittivat silmiä liikaa. Nykyinen versio on <strong>rakennettu Astrolla</strong>, mikä antaa mahdollisuuden tehdä uudelleenkäytettäviä komponentteja, kuten yhteisen headerin, ja se on <strong>täysin responsiivinen monilla eri näyttökoilla.</strong>',

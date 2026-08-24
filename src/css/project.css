@@ -63,6 +63,7 @@
   margin: 0;
   line-height: 1.5;
   min-height: calc(4 * 1.5em);
+  flex: 1 1 auto;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   line-clamp: 4;
@@ -98,12 +99,30 @@
 .project-links {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
-  margin-top: auto;
-  padding-top: 8px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  container-type: inline-size;
 }
 
 /* .btn styles moved to base.css */
+
+.project-links .btn {
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: center;
+}
+
+.project-links .btn-label {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Not enough room for both labels: icon-only buttons */
+@container (max-width: 240px) {
+  .project-links .btn-label {
+    display: none;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .project-image img {

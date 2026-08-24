@@ -2,6 +2,7 @@
 import animalStackContent from "./projects/animalStack";
 import beanWithTheGunsContent from "./projects/beanWithTheGuns";
 import crystalCaveContent from "./projects/crystalCave";
+import godotProject2026Content from "./projects/godotProject2026";
 import hellSlayerContent from "./projects/hellSlayer";
 import portfolioWebsiteContent from "./projects/portfolioWebsite";
 import riseOfTheFallenContent from "./projects/riseOfTheFallen";
@@ -126,6 +127,24 @@ const homePageContent: Record<Locale, HomePageContent> = {
           path: "/ProjectRiseOfTheFallenDeathOfMankindPage",
           sourceUrl: "https://github.com/Jupresson/Stupid-inc-unreal-project",
         },
+        {
+          title: "2026 Godot Project",
+          description:
+            "A first-person Backrooms platformer in early development, with TrenchBroom-built levels and base movement in place.",
+          image: "/Project2026GodotImageSmall.webp",
+          technologies: ["Godot", "GDScript"],
+          path: "/Project2026GodotProjectPage",
+          sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
+        },
+        {
+          title: "Portfolio Website",
+          description:
+            "A personal portfolio built to showcase my projects and skills. I designed, coded, and refined it from scratch across three versions to get it right.",
+          image: "/ProjectPortfolioWebsiteImage.webp",
+          technologies: ["HTML", "CSS", "JavaScript", "Astro"],
+          path: "/ProjectPortfolioWebsitePage",
+          sourceUrl: "https://github.com/Jupresson/Jupresson.github.io-src",
+        },
       ],
     },
     skills: {
@@ -203,6 +222,24 @@ const homePageContent: Record<Locale, HomePageContent> = {
           path: "/ProjectRiseOfTheFallenDeathOfMankindPage",
           sourceUrl: "https://github.com/Jupresson/Stupid-inc-unreal-project",
         },
+        {
+          title: "2026 Godot Project",
+          description:
+            "Ensimmäisen persoonan backrooms-platformeri, joka on vielä alkuvaiheessa. TrenchBroomilla rakennetut tasot ja perusliikkuminen ovat jo pystyssä.",
+          image: "/Project2026GodotImageSmall.webp",
+          technologies: ["Godot", "GDScript"],
+          path: "/Project2026GodotProjectPage",
+          sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
+        },
+        {
+          title: "Portfolio Nettisivu",
+          description:
+            "Henkilökohtainen portfolio, joka esittelee projektejani ja taitojani. Suunnittelin, koodasin ja hioin sen kolmessa versiossa saadakseni sen kohdalleen.",
+          image: "/ProjectPortfolioWebsiteImage.webp",
+          technologies: ["HTML", "CSS", "JavaScript", "Astro"],
+          path: "/ProjectPortfolioWebsitePage",
+          sourceUrl: "https://github.com/Jupresson/Jupresson.github.io-src",
+        },
       ],
     },
     skills: {
@@ -246,6 +283,15 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
     },
     intro: "Projects are ordered from latest to oldest.",
     items: [
+      {
+        title: "2026 Godot Project",
+        description:
+          "A first-person Backrooms platformer in early development, with TrenchBroom-built levels and base movement in place.",
+        image: "/Project2026GodotImageSmall.webp",
+        technologies: ["Godot", "GDScript"],
+        path: "/Project2026GodotProjectPage",
+        sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
+      },
       {
         title: "Animal Stack",
         description:
@@ -320,6 +366,15 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
     },
     intro: "Projektit on järjestetty uusimmasta vanhimpaan.",
     items: [
+      {
+        title: "2026 Godot Project",
+        description:
+          "Ensimmäisen persoonan backrooms-platformeri, joka on vielä alkuvaiheessa. TrenchBroomilla rakennetut tasot ja perusliikkuminen ovat jo pystyssä.",
+        image: "/Project2026GodotImageSmall.webp",
+        technologies: ["Godot", "GDScript"],
+        path: "/Project2026GodotProjectPage",
+        sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
+      },
       {
         title: "Animal Stack",
         description:
@@ -407,6 +462,10 @@ export const pageEntries: PageEntry[] = [
   {
     slug: "/ProjectCrystalCavePage",
     content: crystalCaveContent,
+  },
+  {
+    slug: "/Project2026GodotProjectPage",
+    content: godotProject2026Content,
   },
   {
     slug: "/ProjectHellSlayerPage",

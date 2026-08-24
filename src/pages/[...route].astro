@@ -8,9 +8,6 @@ import {
   localizePath,
   locales,
   stripLocaleFromPathname,
-  type HomePageContent,
-  type ProjectDetailPageContent,
-  type ProjectListPageContent,
 } from "../i18n/site";
 
 export function getStaticPaths() {
@@ -37,13 +34,8 @@ if (!pageEntry) {
 }
 
 const pageContent = pageEntry.content[locale];
-const homePageContent = pageContent.kind === "home" ? (pageContent as HomePageContent) : undefined;
-const projectListPageContent =
-  pageContent.kind === "project-list" ? (pageContent as ProjectListPageContent) : undefined;
-const projectDetailPageContent =
-  pageContent.kind === "project-detail" ? (pageContent as ProjectDetailPageContent) : undefined;
 ---
 
-{homePageContent && <HomePage locale={locale} content={homePageContent} />}
-{projectListPageContent && <ProjectListPage locale={locale} content={projectListPageContent} />}
-{projectDetailPageContent && <ProjectDetailPage locale={locale} content={projectDetailPageContent} />}
+{pageContent.kind === "home" && <HomePage locale={locale} content={pageContent} />}
+{pageContent.kind === "project-list" && <ProjectListPage locale={locale} content={pageContent} />}
+{pageContent.kind === "project-detail" && <ProjectDetailPage locale={locale} content={pageContent} />}

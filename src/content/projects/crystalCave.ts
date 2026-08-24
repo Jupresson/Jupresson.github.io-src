@@ -30,7 +30,6 @@ const crystalCaveContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "2D Platformer" },
         { label: "Project Timeline:", value: "X X, 2025 - Apr 15, 2025" },
-        // removed Project Duration
         { label: "Project Status:", value: "Demo" },
         { label: "Game engine:", value: "Godot 4.3" },
         { label: "Programming language:", value: "Godot 4.3 GDScript" },
@@ -87,7 +86,6 @@ const crystalCaveContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "2D tasohyppely" },
         { label: "Projektin aikajana:", value: "X X, 2025 - 15.4.2025" },
-        // removed Projektin kesto
         { label: "Projektin tila:", value: "Demo" },
         { label: "Pelimoottori:", value: "Godot 4.3" },
         { label: "Ohjelmointikieli:", value: "Godot 4.3 GDScript" },

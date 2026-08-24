@@ -32,7 +32,6 @@ const beanWithTheGunsContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "3D Roguelike, bullet hell game" },
         { label: "Project Timeline:", value: "Feb 9, 2026 - Mar 1, 2026" },
-        // removed Project Duration
         { label: "Project Status:", value: "Prototype" },
         { label: "Game engine:", value: "Godot 4.6.1" },
         { label: "Programming language:", value: "Godot 4.6.1 GDScript" },
@@ -92,7 +91,6 @@ const beanWithTheGunsContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "3D roguelike bullet hell -peli" },
         { label: "Projektin aikajana:", value: "9.2.2026 - 1.3.2026" },
-        // removed Projektin kesto
         { label: "Projektin tila:", value: "Prototyyppi" },
         { label: "Pelimoottori:", value: "Godot 4.6.1" },
         { label: "Ohjelmointikieli:", value: "Godot 4.6.1 GDScript" },

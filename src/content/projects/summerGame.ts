@@ -30,7 +30,6 @@ const summerGameContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "2D Top-Down Clicking Game" },
         { label: "Project Timeline:", value: "X X, 2025 - X X, 2025" },
-        // removed Project Duration
         { label: "Project Status:", value: "Prototype" },
         { label: "Game engine:", value: "Pygame-CE 2.5.5" },
         { label: "Programming language:", value: "Python" },
@@ -86,7 +85,6 @@ const summerGameContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "2D ylhäältä kuvattu klikkailupeli" },
         { label: "Projektin aikajana:", value: "X X, 2025 - X X, 2025" },
-        // removed Projektin kesto
         { label: "Projektin tila:", value: "Prototyyppi" },
         { label: "Pelimoottori:", value: "Pygame-CE 2.5.5" },
         { label: "Ohjelmointikieli:", value: "Python" },

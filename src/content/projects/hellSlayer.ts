@@ -32,7 +32,6 @@ const hellSlayerContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "First-Person Dungeon Crawler" },
         { label: "Project Timeline:", value: "Feb 10 2025 - Jun 1 2025" },
-        // removed Project Duration
         { label: "Project Status:", value: "Prototype" },
         { label: "Game engine:", value: "Unity 6" },
         { label: "Programming language:", value: "C#" },
@@ -86,7 +85,6 @@ const hellSlayerContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "Ensimmäisen persoonan luolastoryömintä" },
         { label: "Projektin aikajana:", value: "10.2.2025 - 1.6.2025" },
-        // removed Projektin kesto
         { label: "Projektin tila:", value: "Prototyyppi" },
         { label: "Pelimoottori:", value: "Unity 6" },
         { label: "Ohjelmointikieli:", value: "C#" },

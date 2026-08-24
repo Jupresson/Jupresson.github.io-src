@@ -30,7 +30,6 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Type:", value: "Static Website" },
         { label: "Project Timeline:", value: "X X, 2025 - X X, 2026" },
-        // removed Project Duration
         { label: "Project Status:", value: "Release" },
         { label: "Programming language:", value: "HTML, CSS, JavaScript & Astro" },
         { label: "Team size:", value: "Solo" },
@@ -79,7 +78,6 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Tyyppi:", value: "Staattinen verkkosivusto" },
         { label: "Projektin aikajana:", value: "X X, 2025 - X X, 2026" },
-        // removed Projektin kesto
         { label: "Projektin tila:", value: "Julkaistu" },
         { label: "Ohjelmointikieli:", value: "HTML, CSS, JavaScript & Astro" },
         { label: "Tiimin koko:", value: "Solo" },

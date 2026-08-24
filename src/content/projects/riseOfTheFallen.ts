@@ -33,7 +33,6 @@ const riseOfTheFallenContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Genre:", value: "First-Person Stage-Based Shooter" },
         { label: "Project Timeline:", value: "Aug 19, 2025 - Dec 19, 2025" },
-        // removed Project Duration
         { label: "Project Status:", value: "Demo" },
         { label: "Game engine:", value: "Unreal Engine 5.6.1" },
         { label: "Programming language:", value: "Unreal Engine 5.6.1 Blueprints" },
@@ -99,7 +98,6 @@ const riseOfTheFallenContent: Record<Locale, ProjectDetailPageContent> = {
       rows: [
         { label: "Lajityyppi:", value: "Ensimmäisen persoonan kenttäpohjainen räiskintä" },
         { label: "Projektin aikajana:", value: "19.8.2025 - 19.12.2025" },
-        // removed Projektin kesto
         { label: "Projektin tila:", value: "Demo" },
         { label: "Pelimoottori:", value: "Unreal Engine 5.6.1" },
         { label: "Ohjelmointikieli:", value: "Unreal Engine 5.6.1 Blueprints" },

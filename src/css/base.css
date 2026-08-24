@@ -311,10 +311,14 @@ p {
 .cr .hero > .home-hero__image-wrap {
   width: clamp(120px, 18vw, 240px);
   max-width: 100%;
+  height: clamp(120px, 18vw, 240px);
 }
 
 .cr .hero > .home-hero__image-wrap .img--detail {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 /* Make hero images feel visually attached to the header on key pages. */
@@ -342,6 +346,7 @@ p {
   .cr .hero > .hero-image-wrap,
   .cr .hero > .home-hero__image-wrap {
     width: clamp(190px, 64vw, 320px);
+    height: auto;
     margin-left: auto;
     margin-right: auto;
   }

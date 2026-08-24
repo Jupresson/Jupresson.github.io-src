@@ -17,6 +17,8 @@ export interface ProjectCardData {
   title: string;
   description: string;
   image: string;
+  /** CSS aspect-ratio value (e.g. "593 / 804") for images that aren't 16:9, like a portrait phone screenshot. */
+  imageAspectRatio?: string;
   technologies: string[];
   path?: string;
   sourceUrl?: string;

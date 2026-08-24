@@ -251,6 +251,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
         description:
           "Place a platform on a real surface, then balance physics-driven objects on it without letting the stack topple.",
         image: "/ProjectAnimalStack.webp",
+        imageAspectRatio: "593 / 804",
         technologies: ["Unity", "C#", "AR Foundation"],
         path: "/ProjectAnimalStackPage",
         sourceUrl: "https://github.com/Jupresson/Animal_Stack",
@@ -325,6 +326,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
         description:
           "Aseta alusta oikealle pinnalle ja tasapainota fysiikkapohjaisia esineitä sen päälle ilman, että pino kaatuu.",
         image: "/ProjectAnimalStack.webp",
+        imageAspectRatio: "593 / 804",
         technologies: ["Unity", "C#", "AR Foundation"],
         path: "/ProjectAnimalStackPage",
         sourceUrl: "https://github.com/Jupresson/Animal_Stack",

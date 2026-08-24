@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description: string;
   image: string;
+  imageAspectRatio?: string;
   technologies: string[];
   websiteUrl?: string;
   sourceUrl?: string;
@@ -16,6 +17,7 @@ const {
   title,
   description,
   image,
+  imageAspectRatio,
   technologies,
   websiteUrl,
   sourceUrl,
@@ -36,7 +38,7 @@ const imageAlt = title.replace(/<br\s*\/?\s*>/gi, " ").replace(/\s+/g, " ").trim
 ---
 
 <div class="project-card">
-  <div class="project-image">
+  <div class="project-image" style={imageAspectRatio ? `aspect-ratio: ${imageAspectRatio}` : undefined}>
     <img class="img img--project" src={image} alt={imageAlt} loading="lazy" decoding="async" />
   </div>
   

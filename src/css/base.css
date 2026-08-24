@@ -339,8 +339,11 @@ p {
     width: clamp(190px, 64vw, 320px);
   }
 
-  .cr .hero > .hero-image-wrap {
+  .cr .hero > .hero-image-wrap,
+  .cr .hero > .home-hero__image-wrap {
     width: clamp(190px, 64vw, 320px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cr.hero .img,

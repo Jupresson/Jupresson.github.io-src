@@ -1,4 +1,5 @@
 ﻿import { socialIcons } from "./icons";
+import animalStackContent from "./projects/animalStack";
 import beanWithTheGunsContent from "./projects/beanWithTheGuns";
 import crystalCaveContent from "./projects/crystalCave";
 import hellSlayerContent from "./projects/hellSlayer";
@@ -246,6 +247,15 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
     intro: "Projects are ordered from latest to oldest.",
     items: [
       {
+        title: "Animal Stack",
+        description:
+          "Place a platform on a real surface, then balance physics-driven objects on it without letting the stack topple.",
+        image: "/ProjectAnimalStack.webp",
+        technologies: ["Unity", "C#", "AR Foundation"],
+        path: "/ProjectAnimalStackPage",
+        sourceUrl: "https://github.com/Jupresson/Animal_Stack",
+      },
+      {
         title: "Portfolio Website",
         description:
           "A personal portfolio built to showcase my projects and skills. I designed, coded, and refined it from scratch across three versions to get it right.",
@@ -310,6 +320,15 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
     },
     intro: "Projektit on järjestetty uusimmasta vanhimpaan.",
     items: [
+      {
+        title: "Animal Stack",
+        description:
+          "Aseta alusta oikealle pinnalle ja tasapainota fysiikkapohjaisia esineitä sen päälle ilman, että pino kaatuu.",
+        image: "/ProjectAnimalStack.webp",
+        technologies: ["Unity", "C#", "AR Foundation"],
+        path: "/ProjectAnimalStackPage",
+        sourceUrl: "https://github.com/Jupresson/Animal_Stack",
+      },
       {
         title: "Portfolio Nettisivu",
         description:
@@ -376,6 +395,10 @@ export const pageEntries: PageEntry[] = [
   {
     slug: "/ProjectListPage",
     content: projectListPageContent,
+  },
+  {
+    slug: "/ProjectAnimalStackPage",
+    content: animalStackContent,
   },
   {
     slug: "/ProjectBeanWithTheGunsPage",

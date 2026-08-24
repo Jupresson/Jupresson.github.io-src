@@ -60,40 +60,6 @@ const socialImageUrl = new URL("/ProjectPortfolioWebsiteImage.webp", siteUrl).hr
 				}
 			})();
 		</script>
-		<script is:inline>
-			(() => {
-				const setLevelUpJitter = (host) => {
-					const text = host?.querySelector?.(".level-up-text");
-					if (!text) return;
-
-					// Keep randomization subtle so each hover feels unique without looking noisy.
-					const x = (Math.random() * 8 - 4).toFixed(2);
-					const y = (Math.random() * 4 - 2).toFixed(2);
-					const r = (Math.random() * 6 - 3).toFixed(2);
-
-					text.style.setProperty("--level-up-x", `${x}px`);
-					text.style.setProperty("--level-up-y", `${y}px`);
-					text.style.setProperty("--level-up-r", `${r}deg`);
-				};
-
-				document.addEventListener(
-					"pointerenter",
-					(event) => {
-						const target = event.target;
-						if (!(target instanceof Element)) return;
-
-						const host = target.closest(
-							".project-card.bean-with-guns .project-image, .bean-levelup-wrap",
-						);
-
-						if (host) {
-							setLevelUpJitter(host);
-						}
-					},
-					true,
-				);
-			})();
-		</script>
 	</head>
 	<body>
 		<Header

@@ -12,9 +12,6 @@ const { locale, content } = Astro.props as {
 };
 
 const ui = getUiContent(locale);
-const showBeanLevelUp = content.hero.imageClass === "img-bean-small";
-const showWebProjectBurst =
-  content.hero.imageClass === "img-web-project" || content.hero.imageClass === "img-click";
 ---
 
 <Layout title={content.metaTitle}>
@@ -25,9 +22,8 @@ const showWebProjectBurst =
         <p class="wp">{content.hero.subtitle}</p>
         <p>{content.hero.description}</p>
       </div>
-      <div class:list={["home-hero__image-wrap", { "home-hero__image-wrap--bean": showBeanLevelUp, "home-hero__image-wrap--burst": showWebProjectBurst }]}>
-        <img class:list={["img img--detail", content.hero.imageClass]} src={content.hero.image} alt={content.hero.imageAlt} decoding="async" />
-        {showWebProjectBurst && <div class="home-hero__burst" aria-hidden="true"></div>}
+      <div class="home-hero__image-wrap">
+        <img class="img img--detail" src={content.hero.image} alt={content.hero.imageAlt} decoding="async" />
       </div>
     </div>
   </div>

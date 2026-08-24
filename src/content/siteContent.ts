@@ -388,7 +388,6 @@ const beanWithTheGunsContent: Record<Locale, ProjectDetailPageContent> = {
         "Solo survival experience with waves of escalating enemies and strategic upgrade choices.",
       image: "/ProjectBeanWithTheGunsImageSmall.webp",
       imageAlt: "Screenshot of Bean with the Guns",
-      imageClass: "img-bean-small",
     },
     story: {
       title: "Project Development Story",
@@ -449,7 +448,6 @@ const beanWithTheGunsContent: Record<Locale, ProjectDetailPageContent> = {
         "Yksin tehty selviytymiskokemus, jossa vihollisaallot kasvavat ja päivitysvalinnoilla on iso merkitys.",
       image: "/ProjectBeanWithTheGunsImageSmall.webp",
       imageAlt: "Kuvakaappaus Bean with the Guns -pelistä",
-      imageClass: "img-bean-small",
     },
     story: {
       title: "Projektin kehitystarina",
@@ -513,7 +511,6 @@ const crystalCaveContent: Record<Locale, ProjectDetailPageContent> = {
         "A precision platformer where every jump, wall climb, and dash counts. Too many wrong moves mean starting over, so mastering the movement is the game.",
       image: "/ProjectCrystalCaveImageSmall.webp",
       imageAlt: "Screenshot of Crystal Cave",
-      imageClass: "img-jump",
     },
     story: {
       title: "Project Development Story",
@@ -571,7 +568,6 @@ const crystalCaveContent: Record<Locale, ProjectDetailPageContent> = {
         "Tarkkuusplatformeri, jossa jokainen hyppy, seinäkiipeily ja dash merkitsee. Liian moni virhe tarkoittaa aloitusta alusta, joten liikkeen hallinta on koko pelin ydin.",
       image: "/ProjectCrystalCaveImageSmall.webp",
       imageAlt: "Kuvakaappaus Crystal Cave -pelistä",
-      imageClass: "img-jump",
     },
     story: {
       title: "Projektin kehitystarina",
@@ -632,7 +628,6 @@ const hellSlayerContent: Record<Locale, ProjectDetailPageContent> = {
         "Fight through waves of enemies in a first-person dungeon crawler, collect weapons, adapt your loadout, and see how long you can last.",
       image: "/ProjectHellSlayerImageSmall.webp",
       imageAlt: "Screenshot of Hell Slayer",
-      imageClass: "img-punch",
     },
     story: {
       title: "Project Development Story",
@@ -687,7 +682,6 @@ const hellSlayerContent: Record<Locale, ProjectDetailPageContent> = {
         "Taistele vihollisaaltojen läpi ensimmäisen persoonan luolastoryömintäpelissä, kerää aseita ja muokkaa varustusta selviytyäksesi pidempään.",
       image: "/ProjectHellSlayerImageSmall.webp",
       imageAlt: "Kuvakaappaus Hell Slayer -pelistä",
-      imageClass: "img-punch",
     },
     story: {
       title: "Projektin kehitystarina",
@@ -743,7 +737,6 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
         "A personal portfolio built to showcase my projects and skills, designed, coded, and refined from scratch across three versions to get it right.",
       image: "/ProjectPortfolioWebsiteImageSmall.webp",
       imageAlt: "Screenshot of the portfolio website",
-      imageClass: "img-click",
     },
     story: {
       title: "Project Development Story",
@@ -793,7 +786,6 @@ const portfolioWebsiteContent: Record<Locale, ProjectDetailPageContent> = {
         "Henkilökohtainen portfolio, joka on suunniteltu, koodattu ja hiottu kolmessa versiossa projektieni ja taitojeni esittelemiseen.",
       image: "/ProjectPortfolioWebsiteImageSmall.webp",
       imageAlt: "Kuvakaappaus portfoliosivustosta",
-      imageClass: "img-click",
     },
     story: {
       title: "Projektin kehitystarina",
@@ -847,7 +839,6 @@ const riseOfTheFallenContent: Record<Locale, ProjectDetailPageContent> = {
         "Play as a demon unleashed from hell, tearing through human forces across multiple stages fight, dash, and push forward until the world burns.",
       image: "/ProjectRiseOfTheFallenDeathOfMankindImageSmall.webp",
       imageAlt: "Screenshot of Rise Of The Fallen Death Of Mankind",
-      imageClass: "img-punch",
     },
     story: {
       title: "Project Development Story",
@@ -914,7 +905,6 @@ const riseOfTheFallenContent: Record<Locale, ProjectDetailPageContent> = {
         "Pelaa helvetistä vapautuneena demonina ja raivaa tiesi ihmiskunnan joukkojen läpi useissa kentissä syöksyen eteenpäin, kunnes maailma palaa.",
       image: "/ProjectRiseOfTheFallenDeathOfMankindImageSmall.webp",
       imageAlt: "Kuvakaappaus Rise Of The Fallen Death Of Mankind -pelistä",
-      imageClass: "img-punch",
     },
     story: {
       title: "Projektin kehitystarina",
@@ -983,7 +973,6 @@ const summerGameContent: Record<Locale, ProjectDetailPageContent> = {
         "Click down enemies, collect XP, and grow your cursor into a screen-clearing force. How long can you hold the line?",
       image: "/ProjectSummerGameImageSmall.webp",
       imageAlt: "Screenshot of Summer Game",
-      imageClass: "img-click",
     },
     story: {
       title: "Project Development Story",
@@ -1040,7 +1029,6 @@ const summerGameContent: Record<Locale, ProjectDetailPageContent> = {
         "Klikkaa vihollisia kuoliaksi, kerää XP:tä ja kasvata kursoria koko ruudun tyhjentäväksi voimaksi. Kuinka kauan pystyt pitämään pintasi?",
       image: "/ProjectSummerGameImageSmall.webp",
       imageAlt: "Kuvakaappaus Summer Game -pelistä",
-      imageClass: "img-click",
     },
     story: {
       title: "Projektin kehitystarina",

@@ -33,13 +33,11 @@ const escapedTitle = title
 
 const formattedTitle = escapedTitle.replace(/&lt;br\s*\/?&gt;/gi, "<br>");
 const imageAlt = title.replace(/<br\s*\/?\s*>/gi, " ").replace(/\s+/g, " ").trim();
-const isBeanWithGuns = image.includes("ProjectBeanWithTheGunsImage");
 ---
 
-<div class:list={["project-card", { "bean-with-guns": isBeanWithGuns }]}>
+<div class="project-card">
   <div class="project-image">
     <img class="img img--project" src={image} alt={imageAlt} loading="lazy" decoding="async" />
-    {isBeanWithGuns && <span class="project-image__badge" aria-hidden="true">LEVEL UP!</span>}
   </div>
   
   <div class="project-content">

@@ -99,7 +99,6 @@ export interface ProjectDetailPageContent {
     description: string;
     image: string;
     imageAlt: string;
-    imageClass?: string;
   };
   story: {
     title: string;

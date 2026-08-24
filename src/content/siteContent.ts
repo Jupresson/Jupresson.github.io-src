@@ -131,7 +131,7 @@ const homePageContent: Record<Locale, HomePageContent> = {
           title: "2026 Godot Project",
           description:
             "A first-person Backrooms platformer in early development, with TrenchBroom-built levels and base movement in place.",
-          image: "/Project2026GodotImageV2.webp",
+          image: "/Project2026Godot.webp",
           technologies: ["Godot", "GDScript"],
           path: "/Project2026GodotProjectPage",
           sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
@@ -226,7 +226,7 @@ const homePageContent: Record<Locale, HomePageContent> = {
           title: "2026 Godot Project",
           description:
             "Ensimmäisen persoonan backrooms-platformeri, joka on vielä alkuvaiheessa. TrenchBroomilla rakennetut tasot ja perusliikkuminen ovat jo pystyssä.",
-          image: "/Project2026GodotImageV2.webp",
+          image: "/Project2026Godot.webp",
           technologies: ["Godot", "GDScript"],
           path: "/Project2026GodotProjectPage",
           sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
@@ -287,7 +287,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
         title: "2026 Godot Project",
         description:
           "A first-person Backrooms platformer in early development, with TrenchBroom-built levels and base movement in place.",
-        image: "/Project2026GodotImageV2.webp",
+        image: "/Project2026Godot.webp",
         technologies: ["Godot", "GDScript"],
         path: "/Project2026GodotProjectPage",
         sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",
@@ -370,7 +370,7 @@ const projectListPageContent: Record<Locale, ProjectListPageContent> = {
         title: "2026 Godot Project",
         description:
           "Ensimmäisen persoonan backrooms-platformeri, joka on vielä alkuvaiheessa. TrenchBroomilla rakennetut tasot ja perusliikkuminen ovat jo pystyssä.",
-        image: "/Project2026GodotImageV2.webp",
+        image: "/Project2026Godot.webp",
         technologies: ["Godot", "GDScript"],
         path: "/Project2026GodotProjectPage",
         sourceUrl: "https://github.com/Jupresson/2026GodotProject.git",

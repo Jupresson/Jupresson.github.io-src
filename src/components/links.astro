@@ -31,8 +31,8 @@ const escapedCopiedLabel = copiedLabel.replace(/\\/g, "\\\\").replace(/'/g, "\\'
 <section id="contact" class="contact">
 	<div class="contact__content">
 		{email && emailTitle && emailDescription && (
-			<>
-				<h2>{emailTitle}</h2>
+			<div class="contact__block">
+				<h3>{emailTitle}</h3>
 				<p>{emailDescription}</p>
 
 				<button
@@ -42,17 +42,19 @@ const escapedCopiedLabel = copiedLabel.replace(/\\/g, "\\\\").replace(/'/g, "\\'
 				>
 					{email}
 				</button>
-			</>
+			</div>
 		)}
 
-		<h2>{socialTitle}</h2>
-		<p>{socialDescription}</p>
-		<div class="social-links">
-			{socialLinks.map(link => (
-				<a href={link.url} target="_blank" rel="noopener noreferrer" class="btn">
-					{link.name} <span class="btn-icon" set:html={link.icon}></span>
-				</a>
-			))}
+		<div class="contact__block contact__block--last">
+			<h3>{socialTitle}</h3>
+			<p>{socialDescription}</p>
+			<div class="social-links">
+				{socialLinks.map(link => (
+					<a href={link.url} target="_blank" rel="noopener noreferrer" class="btn">
+						<span class="btn-label">{link.name}</span> <span class="btn-icon" set:html={link.icon}></span>
+					</a>
+				))}
+			</div>
 		</div>
 	</div>
 </section>

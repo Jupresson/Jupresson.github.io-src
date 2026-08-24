@@ -38,7 +38,7 @@ const imageAlt = title.replace(/<br\s*\/?\s*>/gi, " ").replace(/\s+/g, " ").trim
 ---
 
 <div class="project-card">
-  <div class="project-image" style={imageAspectRatio ? `aspect-ratio: ${imageAspectRatio}` : undefined}>
+  <div class={`project-image${imageAspectRatio ? " project-image--contain" : ""}`}>
     <img class="img img--project" src={image} alt={imageAlt} loading="lazy" decoding="async" />
   </div>
   

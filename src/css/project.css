@@ -36,6 +36,10 @@
   transform-origin: center;
 }
 
+.project-image--contain .img--project {
+  object-fit: contain;
+}
+
 .project-card:hover .img--project {
   transform: scale(1.06);
   z-index: 2;

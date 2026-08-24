@@ -10,7 +10,7 @@ const godotProject2026Content: Record<Locale, ProjectDetailPageContent> = {
       subtitle: "First-person Backrooms platformer made in Godot",
       description:
         "A first-person Backrooms platformer in early development, with TrenchBroom-built levels and base movement in place.",
-      image: "/Project2026GodotImageSmall.webp",
+      image: "/Project2026GodotImageSmallV2.webp",
       imageAlt: "Screenshot of 2026 Godot Project",
     },
     story: {
@@ -63,7 +63,7 @@ const godotProject2026Content: Record<Locale, ProjectDetailPageContent> = {
       subtitle: "Godotilla tehty ensimmäisen persoonan backrooms-platformeri",
       description:
         "Ensimmäisen persoonan backrooms-platformeri, joka on vielä alkuvaiheessa. TrenchBroomilla rakennetut tasot ja perusliikkuminen ovat jo pystyssä.",
-      image: "/Project2026GodotImageSmall.webp",
+      image: "/Project2026GodotImageSmallV2.webp",
       imageAlt: "Kuvakaappaus 2026 Godot Projectista",
     },
     story: {

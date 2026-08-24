@@ -41,6 +41,10 @@
   z-index: 2;
 }
 
+body.is-scrolling .project-card {
+  pointer-events: none;
+}
+
 .project-content {
   padding: 24px;
   display: flex;

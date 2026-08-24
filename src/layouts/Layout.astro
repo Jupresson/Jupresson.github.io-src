@@ -35,7 +35,7 @@ const socialImageUrl = new URL("/ProjectPortfolioWebsiteImage.webp", siteUrl).hr
 		<meta name="description" content={description} />
 		<meta name="theme-color" content="#0a0a0a" />
 		<link rel="canonical" href={canonicalUrl} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/webp" href="/FacePicture.webp" />
 		<meta property="og:site_name" content={ui.siteTitle} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={pageTitle} />
@@ -56,8 +56,18 @@ const socialImageUrl = new URL("/ProjectPortfolioWebsiteImage.webp", siteUrl).hr
 						document.documentElement.classList.add("theme-light");
 					}
 				} catch {
-					
+
 				}
+			})();
+			(() => {
+				let scrollTimeout;
+				window.addEventListener("scroll", () => {
+					document.body.classList.add("is-scrolling");
+					clearTimeout(scrollTimeout);
+					scrollTimeout = setTimeout(() => {
+						document.body.classList.remove("is-scrolling");
+					}, 150);
+				}, { passive: true });
 			})();
 		</script>
 	</head>

@@ -24,7 +24,7 @@ A solo-designed and developed **personal portfolio website** built with Astro, s
 ## Technical Highlights
 
 **Architecture**
-- Content-driven routing: all page text, project data, and locale copy live in `src/content/siteContent.ts`, with a single catch-all route generating every static page from it.
+- Content-driven routing: page text and locale copy live in `src/content/siteContent.ts`, each project's detail page lives in its own file under `src/content/projects/`, and a single catch-all route generates every static page from that content.
 - Reusable Astro components for header, footer, project cards, and link sections — eliminating repeated markup across pages.
 - Locale detection and bilingual path generation handled through `src/i18n/site.ts`, supporting full English and Finnish navigation and content.
 
@@ -54,13 +54,14 @@ Each rebuild directly informed better decisions about maintainability and scalab
 
 ## How It Works
 
-- `src/content/siteContent.ts` stores the page text, project data, and locale-specific copy.
+- `src/content/siteContent.ts` stores shared UI copy, the home page, and the project-list page.
+- `src/content/projects/` holds one file per project's detail-page content (imported into `siteContent.ts`).
 - `src/pages/[...route].astro` turns the content into all static routes.
 - `src/i18n/site.ts` handles locale detection and localized path generation.
 - `src/layouts/Layout.astro` applies the shared shell, metadata, and navigation.
 - `public/ReadMoreToggle.js` powers the expandable text sections.
 
-Adding or updating a project usually means editing the content data and dropping in a new image under `public/` if needed.
+Adding a project means adding a new file under `src/content/projects/`, importing it into `siteContent.ts`, and dropping in a new image under `public/` if needed.
 
 ---
 
@@ -69,7 +70,7 @@ Adding or updating a project usually means editing the content data and dropping
 ```text
 src/
 ├── components/        # Header, footer, project cards, and link sections
-├── content/           # Site text and route data
+├── content/           # Site text and route data (siteContent.ts + per-project files in projects/)
 ├── css/               # Site styling
 ├── i18n/              # Helpers for locales, paths, and template strings
 ├── layouts/           # Shared layout that adds the header and footer
@@ -115,7 +116,7 @@ npm run preview
 
 ## Editing Content
 
-- Home page, project content, and locale-specific text live in `src/content/siteContent.ts`.
+- Home page, shared UI copy, and locale-specific text live in `src/content/siteContent.ts`; per-project detail content lives in `src/content/projects/`.
 - Path and locale helpers live in `src/i18n/site.ts`.
 - Shared layout and navigation live in `src/layouts/Layout.astro` and `src/components/Header.astro`.
 - The read-more behavior comes from `public/ReadMoreToggle.js`.
@@ -161,7 +162,6 @@ GitHub Actions then handles the full build and publish flow on every push to `ma
 ## Known Issues / Next Steps
 - Fill in the remaining project timeline placeholders.
 - Recheck the header and email controls on the smallest supported mobile viewports.
-- Split `src/content/siteContent.ts` into per-project content files as the portfolio grows.
 - Add automated checks for locale routing and the production build.
 - Continue the English and Finnish copy-editing pass.
 - Add a flagship multiplayer project case study with an architecture diagram, technical write-up, playable build, and source link.

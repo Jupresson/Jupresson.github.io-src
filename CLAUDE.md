@@ -19,9 +19,9 @@ There is no test suite or linter configured. `npm run build` (which also runs in
 
 ## Architecture
 
-**Content-driven, single catch-all route.** All page text, project data, and locale copy live in `src/content/siteContent.ts` (~1100 lines) as a typed `pageEntries` array. `src/pages/[...route].astro` is the only route file — it generates every static page (both locales) by reading `pageEntries`, resolving locale + slug from the URL, and dispatching to one of three page templates (`HomePage`, `ProjectListPage`, `ProjectDetailPage`) based on the content's `kind` discriminant (`"home" | "project-list" | "project-detail"`).
+**Content-driven, single catch-all route.** All page text, project data, and locale copy live under `src/content/`: `siteContent.ts` holds shared UI copy, the home page, and the project-list page (assembled as a typed `pageEntries` array), while each project's detail-page content lives in its own file under `src/content/projects/` (e.g. `godotProject2026.ts`, `hellSlayer.ts`), imported back into `siteContent.ts`. `src/pages/[...route].astro` is the only route file — it generates every static page (both locales) by reading `pageEntries`, resolving locale + slug from the URL, and dispatching to one of three page templates (`HomePage`, `ProjectListPage`, `ProjectDetailPage`) based on the content's `kind` discriminant (`"home" | "project-list" | "project-detail"`).
 
-To add or edit a project/page: edit `src/content/siteContent.ts` (add a `PageEntry` with `en`/`fi` content), and drop any new image under `public/`. No route file changes needed.
+To add a project: create a new file in `src/content/projects/` exporting `Record<Locale, ProjectDetailPageContent>` (en/fi), import it into `siteContent.ts`, add its `PageEntry`, and drop any new image under `public/`. No route file changes needed.
 
 **i18n (`src/i18n/site.ts`).** Locale is derived purely from the URL path — `/fi` prefix means Finnish, anything else is English (no query params, cookies, or headers). Key functions: `getLocaleFromPathname`, `stripLocaleFromPathname`, `localizePath` (canonical path → locale-prefixed path), `getLanguageSwitchPath` (used by the language toggle in the header), `formatTemplate` (simple `{key}` string interpolation for templated copy, e.g. taglines). All page content types (`HomePageContent`, `ProjectListPageContent`, `ProjectDetailPageContent`) and shared shapes (`ProjectCardData`, `DetailRow`, `SocialLink`) are also defined here.
 
@@ -40,6 +40,5 @@ To add or edit a project/page: edit `src/content/siteContent.ts` (add a `PageEnt
 
 ## Known gaps (from README)
 
-- Some project timeline placeholders still need filling in `siteContent.ts`.
-- `siteContent.ts` is intended to eventually be split into per-project files as content grows.
+- Some project timeline placeholders still need filling in.
 - No automated checks exist yet for locale routing or the build.
